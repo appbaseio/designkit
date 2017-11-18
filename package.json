@@ -1,0 +1,41 @@
+{
+  "name": "designkit",
+  "version": "1.0.0",
+  "description": "Design kit for appbaseio ecosystem",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "precommit": "eslint .",
+    "build": "babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appbaseio/designkit.git"
+  },
+  "author": "metagrover",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/appbaseio/designkit/issues"
+  },
+  "homepage": "https://github.com/appbaseio/designkit#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.10.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "prettier": "^1.8.2",
+    "react": "^16.1.1"
+  },
+  "dependencies": {
+    "emotion": "^8.0.10",
+    "react-emotion": "^8.0.10"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  }
+}
