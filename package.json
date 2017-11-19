@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "precommit": "eslint .",
-    "build": "babel src --out-dir lib"
+    "build": "babel src --out-dir lib",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,11 @@
   },
   "homepage": "https://github.com/appbaseio/designkit#readme",
   "devDependencies": {
+    "@storybook/addon-info": "^3.2.16",
+    "@storybook/addon-knobs": "^3.2.16",
+    "@storybook/addon-options": "^3.2.16",
+    "@storybook/react": "^3.2.16",
+    "@storybook/storybook-deployer": "^2.0.0",
     "babel-eslint": "^8.0.2",
     "eslint": "^4.10.0",
     "eslint-config-prettier": "^2.7.0",
@@ -29,10 +35,14 @@
     "eslint-plugin-react": "^7.4.0",
     "husky": "^0.14.3",
     "prettier": "^1.8.2",
-    "react": "^16.1.1"
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "storybook-readme": "^3.1.1"
   },
   "dependencies": {
     "emotion": "^8.0.10",
+    "emotion-theming": "^8.0.10",
+    "prop-types": "^15.6.0",
     "react-emotion": "^8.0.10"
   },
   "peerDependencies": {
