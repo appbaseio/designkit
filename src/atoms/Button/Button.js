@@ -71,6 +71,7 @@ const shadow = props => css`
 const small = props => css`
 	padding: 0 10px;
 	height: 28px;
+	font-size: 0.88rem;
 `;
 
 const Button = styled("a")`
