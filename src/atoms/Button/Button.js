@@ -8,11 +8,13 @@ import theme from "../../theme";
 
 const transparent = props => css`
 	color: ${props.theme.textDark ? props.theme.textDark : theme.textDark};
+	border: 1px solid ${props.theme.textDark ? shade(props.theme.textDark, 0.4) : shade(theme.textDark, 0.4)};
 	background-color: transparent;
 
 	&:hover, &:focus {
 		background-color: transparent;
 		color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, -0.1)};
+		border-color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, -0.1)};
 	}
 `;
 
@@ -66,6 +68,11 @@ const shadow = props => css`
 	}
 `;
 
+const small = props => css`
+	padding: 0 10px;
+	height: 28px;
+`;
+
 const Button = styled("a")`
 	${base};
 	${font};
@@ -87,6 +94,7 @@ const Button = styled("a")`
 		background-color: ${shade("#f5f5f5", -0.1)};
 	}
 
+	${props => props.small  ? small  : null}
 	${props => props.transparent ? transparent : null}
 	${props => props.primary ? primary : null}
 	${props => props.success ? success : null}
