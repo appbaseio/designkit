@@ -12,7 +12,7 @@ const transparent = props => css`
 
 	&:hover, &:focus {
 		background-color: transparent;
-		color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, 10)};
+		color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, -0.1)};
 	}
 `;
 
@@ -21,7 +21,7 @@ const primary = props => css`
 	background-color: ${props.theme.primaryColor ? props.theme.primaryColor : theme.primaryColor};
 
 	&:hover, &:focus {
-		background-color: ${shade(props.theme.primaryColor ? props.theme.primaryColor : theme.primaryColor, 10)};
+		background-color: ${shade(props.theme.primaryColor ? props.theme.primaryColor : theme.primaryColor, -0.1)};
 	}
 `;
 
@@ -30,7 +30,7 @@ const success = props => css`
 	background-color: ${props.theme.successColor ? props.theme.successColor : theme.successColor};
 
 	&:hover, &:focus {
-		background-color: ${shade(props.theme.successColor ? props.theme.successColor : theme.successColor, 10)};
+		background-color: ${shade(props.theme.successColor ? props.theme.successColor : theme.successColor, -0.1)};
 	}
 `;
 
@@ -39,7 +39,7 @@ const warning = props => css`
 	background-color: ${props.theme.warningColor ? props.theme.warningColor : theme.warningColor};
 
 	&:hover, &:focus {
-		background-color: ${shade(props.theme.warningColor ? props.theme.warningColor : theme.warningColor, 10)};
+		background-color: ${shade(props.theme.warningColor ? props.theme.warningColor : theme.warningColor, -0.1)};
 	}
 `;
 
@@ -48,7 +48,7 @@ const alert = props => css`
 	background-color: ${props.theme.alertColor ? props.theme.alertColor : theme.alertColor};
 
 	&:hover, &:focus {
-		background-color: ${shade(props.theme.alertColor ? props.theme.alertColor : theme.alertColor, 10)};
+		background-color: ${shade(props.theme.alertColor ? props.theme.alertColor : theme.alertColor, -0.1)};
 	}
 `;
 
@@ -84,7 +84,7 @@ const Button = styled("a")`
 	transition: all .3s ease;
 
 	&:hover, &:focus {
-		background-color: ${shade("#f5f5f5", 10)};
+		background-color: ${shade("#f5f5f5", -0.1)};
 	}
 
 	${props => props.transparent ? transparent : null}
