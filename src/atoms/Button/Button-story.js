@@ -6,6 +6,9 @@ storiesOf("Button", module)
 	.add("default", () => (
 		<Button>Get started</Button>
 	))
+	.add("transparent", () => (
+		<Button transparent>Get started</Button>
+	))
 	.add("primary", () => (
 		<Button primary>Get started</Button>
 	))
@@ -17,4 +20,7 @@ storiesOf("Button", module)
 	))
 	.add("disabled", () => (
 		<Button disabled>Get started</Button>
+	))
+	.add("shadow", () => (
+		<Button shadow>Get started</Button>
 	));
