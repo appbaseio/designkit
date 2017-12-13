@@ -8,13 +8,13 @@ import theme from "../../theme";
 
 const transparent = props => css`
 	color: ${props.theme.textDark ? props.theme.textDark : theme.textDark};
-	border: 1px solid ${props.theme.textDark ? shade(props.theme.textDark, 0.4) : shade(theme.textDark, 0.4)};
+	border: 1px solid ${props.theme.textDark ? shade(props.theme.textDark, 0.7) : shade(theme.textDark, 0.7)};
 	background-color: transparent;
 
 	&:hover, &:focus {
 		background-color: transparent;
 		color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, -0.1)};
-		border-color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, -0.1)};
+		border-color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, 0.5)};
 	}
 `;
 
