@@ -2,7 +2,10 @@
   "name": "@appbaseio/designkit",
   "version": "0.1.0",
   "description": "Design kit for appbaseio ecosystem",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "lint": "eslint .",
     "precommit": "eslint .",
