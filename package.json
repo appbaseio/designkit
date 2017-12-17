@@ -1,13 +1,15 @@
 {
-  "name": "designkit",
-  "version": "1.0.0",
+  "name": "@appbaseio/designkit",
+  "version": "0.1.0",
   "description": "Design kit for appbaseio ecosystem",
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint .",
     "precommit": "eslint .",
     "build": "babel src --out-dir lib",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "prepublishOnly": "yarn run build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,7 @@
     "@storybook/addon-knobs": "^3.2.16",
     "@storybook/addon-options": "^3.2.16",
     "@storybook/react": "^3.2.16",
-    "@storybook/storybook-deployer": "^2.0.0",
+    "@storybook/storybook-deployer": "^2.2.0",
     "babel-eslint": "^8.0.2",
     "eslint": "^4.10.0",
     "eslint-config-prettier": "^2.7.0",
