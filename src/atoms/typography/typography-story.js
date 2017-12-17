@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { H1, H2, H3 } from "../typography";
+import { H1, H2, H3, Title, Text } from "../typography";
 import Flex from "../../layouts/Flex";
 
 storiesOf("typography", module)
@@ -9,6 +9,8 @@ storiesOf("typography", module)
 			<H1>Heading 1</H1>
 			<H2>Heading 2</H2>
 			<H3>Heading 3</H3>
+			<Title>Title</Title>
+			<Text>Body</Text>
 		</Flex>
 	))
 	.add("Light Headings", () => (
@@ -16,5 +18,7 @@ storiesOf("typography", module)
 			<H1 light>Heading 1</H1>
 			<H2 light>Heading 2</H2>
 			<H3 light>Heading 3</H3>
+			<Title light>Title</Title>
+			<Text light>Body</Text>
 		</Flex>
 	));

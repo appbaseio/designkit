@@ -5,7 +5,7 @@ import base from "../../shared/base";
 import font from "../../shared/font";
 import theme from "../../theme";
 
-const heading = props => css`
+const text = props => css`
 	margin: ${props.margin || "1.4rem 0 0.5rem"};
 	padding: ${props.padding || "0"};
 	color: ${props.light
@@ -20,7 +20,7 @@ const heading = props => css`
 const H1 = styled("h1")`
 	${base};
 	${font};
-	${heading};
+	${text};
 
 	font-size: ${props => props.fontSize || "2.2rem"};
 	line-height: ${props => props.lineHeight || "2.4rem"};
@@ -28,4 +28,4 @@ const H1 = styled("h1")`
 `;
 
 export default H1;
-export { heading };
+export { text };

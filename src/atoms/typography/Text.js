@@ -5,14 +5,15 @@ import font from "../../shared/font";
 import theme from "../../theme";
 import { text } from "./H1";
 
-const H2 = styled("h2")`
+const Text = styled("p")`
 	${base};
 	${font};
-	${text};
+	${text}
 
-	font-size: ${props => props.fontSize || "1.9rem"};
-	line-height: ${props => props.lineHeight || "2.1rem"};
+	margin: ${props => props.margin || "0.5rem 0"};
+	font-size: ${props => props.fontSize || "0.9rem"};
+	line-height: ${props => props.lineHeight || "1.1rem"};
 	font-weight: ${props => props.fontWeight || "normal"};
 `;
 
-export default H2;
+export default Text;
