@@ -7,7 +7,6 @@ import shade from "../../shared/utils";
 import theme from "../../theme";
 
 const transparent = props => css`
-	color: ${props.theme.textDark ? props.theme.textDark : theme.textDark};
 	border: 1px solid ${props.theme.textDark ? shade(props.theme.textDark, 0.7) : shade(theme.textDark, 0.7)};
 	background-color: transparent;
 
@@ -19,7 +18,6 @@ const transparent = props => css`
 `;
 
 const primary = props => css`
-	color: ${props.theme.textLight ? props.theme.textLight : theme.textLight};
 	background-color: ${props.theme.primaryColor ? props.theme.primaryColor : theme.primaryColor};
 
 	&:hover, &:focus {
@@ -28,7 +26,6 @@ const primary = props => css`
 `;
 
 const success = props => css`
-	color: ${props.theme.textLight ? props.theme.textLight : theme.textLight};
 	background-color: ${props.theme.successColor ? props.theme.successColor : theme.successColor};
 
 	&:hover, &:focus {
@@ -37,7 +34,6 @@ const success = props => css`
 `;
 
 const warning = props => css`
-	color: ${props.theme.textLight ? props.theme.textLight : theme.textLight};
 	background-color: ${props.theme.warningColor ? props.theme.warningColor : theme.warningColor};
 
 	&:hover, &:focus {
@@ -46,7 +42,6 @@ const warning = props => css`
 `;
 
 const alert = props => css`
-	color: ${props.theme.textLight ? props.theme.textLight : theme.textLight};
 	background-color: ${props.theme.alertColor ? props.theme.alertColor : theme.alertColor};
 
 	&:hover, &:focus {
@@ -88,7 +83,9 @@ const Button = styled("a")`
 	cursor: pointer;
 	background-color: #f5f5f5;
 	user-select: none;
-	color: ${props => props.theme.textDark ? props.theme.textDark : theme.textDark};
+	color: ${props => props.light
+		? (props.theme.textLight ? props.theme.textLight : theme.textLight)
+		: (props.theme.textDark ? props.theme.textDark : theme.textDark)};
 	transition: all .3s ease;
 
 	&:hover, &:focus {
