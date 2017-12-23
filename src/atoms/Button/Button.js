@@ -94,7 +94,7 @@ const Button = styled("a")`
 	cursor: pointer;
 	background-color: #f5f5f5;
 	user-select: none;
-	color: ${evalColor(props)};
+	color: ${props => evalColor(props)};
 	transition: all .3s ease;
 
 	&:hover, &:focus {
