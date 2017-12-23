@@ -84,7 +84,7 @@ const Button = styled("a")`
 	align-items: center;
 	padding: 0 16px;
 	height: 38px;
-	border-radius: 4px;
+	border-radius: ${props => props.theme.borderRadius ? props.theme.borderRadius : "4px"};
 	cursor: pointer;
 	background-color: #f5f5f5;
 	user-select: none;
