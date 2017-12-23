@@ -1,3 +1,13 @@
+const evalColor = (props) => {
+	return props.light ?
+		(props.theme.textLight ? props.theme.textLight: theme.textLight) :
+		(props.theme.textDark ? props.theme.textDark: theme.textDark);
+};
+
+const evalColorType = (props, color) => {
+	return props.theme[color] ? props.theme[color] : theme[color];
+}
+
 export default function shade(color, percent) {
 	const f = parseInt(color.slice(1), 16),
 		t = percent < 0 ? 0 : 255,
@@ -18,3 +28,5 @@ export default function shade(color, percent) {
 			.slice(1)
 	);
 }
+
+export { evalColor, evalColorType };

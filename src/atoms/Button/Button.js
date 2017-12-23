@@ -3,19 +3,9 @@ import styled from "react-emotion";
 
 import base from "../../shared/base";
 import font from "../../shared/font";
-import shade from "../../shared/utils";
+import { shade, evalColor, evalColorType } from "../../shared/utils";
 import theme from "../../theme";
 
-/* Todo: Move these inside utils */
-const evalColor = (props) => {
-	return props.light ?
-		(props.theme.textLight ? props.theme.textLight: theme.textLight) :
-		(props.theme.textDark ? props.theme.textDark: theme.textDark);
-};
-
-const evalColorType = (props, color) => {
-	return props.theme[color] ? props.theme[color] : theme[color];
-}
 
 const transparent = props => css`
 	border: 1px solid ${shade(evalColor(props), 0.7)};
