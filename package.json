@@ -1,6 +1,6 @@
 {
   "name": "@appbaseio/designkit",
-  "version": "0.2.1",
+  "version": "0.2.6",
   "description": "Design kit for appbaseio ecosystem",
   "main": "lib/index.js",
   "files": [
