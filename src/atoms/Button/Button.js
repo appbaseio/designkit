@@ -84,7 +84,7 @@ const Button = styled("a")`
 	background-color: #f5f5f5;
 	user-select: none;
 	color: ${props => props.light
-		? (props.theme.textLight ? props.theme.textLight : props.textLight)
+		? (props.theme.textLight ? props.theme.textLight : theme.textLight)
 		: (props.theme.textDark ? props.theme.textDark : theme.textDark)};
 	transition: all .3s ease;
 
