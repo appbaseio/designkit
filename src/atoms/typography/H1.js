@@ -8,13 +8,9 @@ import theme from "../../theme";
 const text = props => css`
 	margin: ${props.margin || "1.4rem 0 0.5rem"};
 	padding: ${props.padding || "0"};
-	color: ${props.light
-		? props.theme.textLight
-			? props.theme.textLight
-			: theme.textLight
-		: props.theme.textDark
-			? prop.theme.textDark
-			: theme.textDark};
+	color: ${(props.light
+		? (props.theme.textLight ? props.theme.textLight: theme.textLight)
+		: (props.theme.textDark ? props.theme.textDark : theme.textDark)};
 `;
 
 const H1 = styled("h1")`
