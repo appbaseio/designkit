@@ -6,46 +6,57 @@ import font from "../../shared/font";
 import shade from "../../shared/utils";
 import theme from "../../theme";
 
+/* Todo: Move these inside utils */
+const evalColor = (props) => {
+	return props.light ?
+		(props.theme.textLight ? props.theme.textLight: theme.textLight) :
+		(props.theme.textDark ? props.theme.textDark: theme.textDark);
+};
+
+const evalColorType = (color) => {
+	return props.theme[color] ? props.theme[color] : theme[color];
+}
+
 const transparent = props => css`
-	border: 1px solid ${props.theme.textDark ? shade(props.theme.textDark, 0.7) : shade(theme.textDark, 0.7)};
+	border: 1px solid ${shade(evalColor(props), 0.7)};
 	background-color: transparent;
 
 	&:hover, &:focus {
 		background-color: transparent;
-		color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, -0.1)};
-		border-color: ${shade(props.theme.textDark ? props.theme.textDark : theme.textDark, 0.5)};
+		color: ${shade(evalColor(props), -0.1)};
+		border-color: ${shade(evalColor(props), 0.5)};
 	}
 `;
 
 const primary = props => css`
-	background-color: ${props.theme.primaryColor ? props.theme.primaryColor : theme.primaryColor};
+	background-color: ${evalColorType("primaryColor")};
 
 	&:hover, &:focus {
-		background-color: ${shade(props.theme.primaryColor ? props.theme.primaryColor : theme.primaryColor, -0.1)};
+		background-color: ${shade(evalColorType("primaryColor"), -0.1)};
 	}
 `;
 
 const success = props => css`
-	background-color: ${props.theme.successColor ? props.theme.successColor : theme.successColor};
+	background-color: ${evalColorType("successColor")};
 
 	&:hover, &:focus {
-		background-color: ${shade(props.theme.successColor ? props.theme.successColor : theme.successColor, -0.1)};
+		background-color: ${shade(evalColorType("successColor"), -0.1)};
 	}
 `;
 
 const warning = props => css`
-	background-color: ${props.theme.warningColor ? props.theme.warningColor : theme.warningColor};
+	background-color: ${evalColorType("warningColor")};
 
 	&:hover, &:focus {
-		background-color: ${shade(props.theme.warningColor ? props.theme.warningColor : theme.warningColor, -0.1)};
+		background-color: ${shade(evalColorType("warningColor"), -0.1)};
 	}
 `;
 
 const alert = props => css`
-	background-color: ${props.theme.alertColor ? props.theme.alertColor : theme.alertColor};
+	background-color: ${evalColorType("alertColor")};
 
 	&:hover, &:focus {
-		background-color: ${shade(props.theme.alertColor ? props.theme.alertColor : theme.alertColor, -0.1)};
+		background-color: ${shade(evalColorType("alertColor"), -0.1)};
 	}
 `;
 
@@ -83,9 +94,7 @@ const Button = styled("a")`
 	cursor: pointer;
 	background-color: #f5f5f5;
 	user-select: none;
-	color: ${props => props.light
-		? (props.theme.textLight ? props.theme.textLight : theme.textLight)
-		: (props.theme.textDark ? props.theme.textDark : theme.textDark)};
+	color: ${evalColor(props)};
 	transition: all .3s ease;
 
 	&:hover, &:focus {
