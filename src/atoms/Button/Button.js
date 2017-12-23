@@ -13,7 +13,7 @@ const evalColor = (props) => {
 		(props.theme.textDark ? props.theme.textDark: theme.textDark);
 };
 
-const evalColorType = (color) => {
+const evalColorType = (props, color) => {
 	return props.theme[color] ? props.theme[color] : theme[color];
 }
 
@@ -29,34 +29,34 @@ const transparent = props => css`
 `;
 
 const primary = props => css`
-	background-color: ${evalColorType("primaryColor")};
+	background-color: ${evalColorType(props, "primaryColor")};
 
 	&:hover, &:focus {
-		background-color: ${shade(evalColorType("primaryColor"), -0.1)};
+		background-color: ${shade(evalColorType(props, "primaryColor"), -0.1)};
 	}
 `;
 
 const success = props => css`
-	background-color: ${evalColorType("successColor")};
+	background-color: ${evalColorType(props, "successColor")};
 
 	&:hover, &:focus {
-		background-color: ${shade(evalColorType("successColor"), -0.1)};
+		background-color: ${shade(evalColorType(props, "successColor"), -0.1)};
 	}
 `;
 
 const warning = props => css`
-	background-color: ${evalColorType("warningColor")};
+	background-color: ${evalColorType(props, "warningColor")};
 
 	&:hover, &:focus {
-		background-color: ${shade(evalColorType("warningColor"), -0.1)};
+		background-color: ${shade(evalColorType(props, "warningColor"), -0.1)};
 	}
 `;
 
 const alert = props => css`
-	background-color: ${evalColorType("alertColor")};
+	background-color: ${evalColorType(props, "alertColor")};
 
 	&:hover, &:focus {
-		background-color: ${shade(evalColorType("alertColor"), -0.1)};
+		background-color: ${shade(evalColorType(props, "alertColor"), -0.1)};
 	}
 `;
 
