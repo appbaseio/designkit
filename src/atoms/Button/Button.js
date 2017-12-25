@@ -6,6 +6,7 @@ import font from '../../shared/font';
 import { shade, getTextColor, getProperty } from '../../shared/utils';
 
 const transparent = props => css`
+	color: ${getProperty(props, 'textDark')};
 	border: 1px solid ${shade(getTextColor(props), 0.7)};
 	background-color: transparent;
 
@@ -17,6 +18,7 @@ const transparent = props => css`
 `;
 
 const primary = props => css`
+	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'primaryColor')};
 
 	&:hover, &:focus {
@@ -25,6 +27,7 @@ const primary = props => css`
 `;
 
 const success = props => css`
+	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'successColor')};
 
 	&:hover, &:focus {
@@ -33,6 +36,7 @@ const success = props => css`
 `;
 
 const warning = props => css`
+	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'warningColor')};
 
 	&:hover, &:focus {
@@ -41,6 +45,7 @@ const warning = props => css`
 `;
 
 const alert = props => css`
+	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'alertColor')};
 
 	&:hover, &:focus {

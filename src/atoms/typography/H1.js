@@ -8,7 +8,7 @@ import { getTextColor } from '../../shared/utils';
 const text = props => css`
 	margin: ${props.margin || '1.4rem 0 0.5rem'};
 	padding: ${props.padding || '0'};
-	color: ${getTextColor()};
+	color: ${getTextColor(props)};
 `;
 
 const H1 = styled('h1')`

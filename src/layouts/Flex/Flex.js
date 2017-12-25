@@ -2,6 +2,7 @@ import styled from 'react-emotion';
 
 import base from '../../shared/base';
 import font from '../../shared/font';
+import { getTextColor } from '../../shared/utils';
 
 const Flex = styled('div')`
 	${base};
@@ -16,7 +17,9 @@ const Flex = styled('div')`
 	align-content: ${props => (props.alignContent ? props.alignContent : 'stretch')};
 
 	background-color: ${props => (props.backgroundColor ? props.backgroundColor : 'transparent')};
+	color: ${props => (props.color ? props.color : getTextColor(props))};
 	border: ${props => (props.border ? props.border : 0)};
+	border-radius: ${props => (props.borderRadius ? props.borderRadius : 0)};
 	box-shadow: ${props => (props.boxShadow ? props.boxShadow : 'none')};
 
 	margin: ${props => (props.margin ? props.margin : 0)};
