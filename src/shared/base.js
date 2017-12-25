@@ -1,4 +1,4 @@
-import { css } from "emotion";
+import { css } from 'emotion';
 
 const base = css`
 	box-sizing: border-box;

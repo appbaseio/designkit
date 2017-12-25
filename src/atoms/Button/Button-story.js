@@ -1,32 +1,32 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import Button from "../Button";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Button from '../Button';
 
-storiesOf("Button", module)
-	.add("default", () => (
+storiesOf('Button', module)
+	.add('default', () => (
 		<Button>Get started</Button>
 	))
-	.add("small", () => (
+	.add('small', () => (
 		<Button small>Get started</Button>
 	))
-	.add("primary", () => (
+	.add('primary', () => (
 		<Button primary>Get started</Button>
 	))
-	.add("success", () => (
+	.add('success', () => (
 		<Button success>Get started</Button>
 	))
-	.add("warning", () => (
+	.add('warning', () => (
 		<Button warning>Get started</Button>
 	))
-	.add("alert", () => (
+	.add('alert', () => (
 		<Button alert>Get started</Button>
 	))
-	.add("transparent", () => (
+	.add('transparent', () => (
 		<Button transparent>Get started</Button>
 	))
-	.add("disabled", () => (
+	.add('disabled', () => (
 		<Button disabled>Get started</Button>
 	))
-	.add("shadow", () => (
+	.add('shadow', () => (
 		<Button shadow>Get started</Button>
 	));

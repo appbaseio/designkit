@@ -1,10 +1,10 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { H1, H2, H3, Title, Text, A } from "../typography";
-import Flex from "../../layouts/Flex";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { H1, H2, H3, Title, Text, A } from '../typography';
+import Flex from '../../layouts/Flex';
 
-storiesOf("typography", module)
-	.add("Headings", () => (
+storiesOf('typography', module)
+	.add('Headings', () => (
 		<Flex flexDirection="column">
 			<H1>Heading 1</H1>
 			<H2>Heading 2</H2>
@@ -14,7 +14,7 @@ storiesOf("typography", module)
 			<A>Link</A>
 		</Flex>
 	))
-	.add("Light Headings", () => (
+	.add('Light Headings', () => (
 		<Flex flexDirection="column" backgroundColor="#333">
 			<H1 light>Heading 1</H1>
 			<H2 light>Heading 2</H2>

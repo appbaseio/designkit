@@ -1,23 +1,27 @@
-const evalColor = (props) => {
-	return props.light ?
-		(props.theme.textLight ? props.theme.textLight: theme.textLight) :
-		(props.theme.textDark ? props.theme.textDark: theme.textDark);
-};
+/* eslint-disable */
+import theme from '../theme';
 
-const evalColorType = (props, color) => {
-	return props.theme[color] ? props.theme[color] : theme[color];
+export function getTextColor(props) {
+	if (props.light) {
+		return (props.theme.textLight ? props.theme.textLight : theme.textLight);
+	}
+	return (props.theme.textDark ? props.theme.textDark : theme.textDark);
 }
 
-function shade(color, percent) {
-	const f = parseInt(color.slice(1), 16),
-		t = percent < 0 ? 0 : 255,
-		p = percent < 0 ? percent * -1 : percent,
-		R = f >> 16,
-		G = (f >> 8) & 0x00ff,
-		B = f & 0x0000ff;
+export function getProperty(props, color) {
+	return (props.theme[color] ? props.theme[color] : theme[color]);
+}
+
+export function shade(color, percent) {
+	const f = parseInt(color.slice(1), 16);
+	const t = percent < 0 ? 0 : 255;
+	const p = percent < 0 ? percent * -1 : percent;
+	const R = f >> 16;
+	const G = (f >> 8) & 0x00ff;
+	const B = f & 0x0000ff;
 
 	return (
-		"#" +
+		'#' +
 		(
 			0x1000000 +
 			(Math.round((t - R) * p) + R) * 0x10000 +
@@ -28,5 +32,3 @@ function shade(color, percent) {
 			.slice(1)
 	);
 }
-
-export { evalColor, evalColorType, shade };
