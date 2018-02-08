@@ -73,6 +73,17 @@ const small = css`
 	font-size: 0.88rem;
 `;
 
+const big = css`
+	padding: 0 20px;
+	height: 44px;
+	font-size: 1rem;
+	line-height: 1rem;
+`;
+
+const block = css`
+	display: flex;
+`;
+
 const Button = styled('a')`
 	${base};
 	${font};
@@ -82,7 +93,7 @@ const Button = styled('a')`
 	justify-content: center;
 	align-items: center;
 	padding: 0 16px;
-	height: 38px;
+	height: 40px;
 	border-radius: ${props => (props.theme.borderRadius ? props.theme.borderRadius : '4px')};
 	cursor: pointer;
 	background-color: #f5f5f5;
@@ -95,6 +106,8 @@ const Button = styled('a')`
 	}
 
 	${props => (props.small ? small : null)}
+	${props => (props.big ? big : null)}
+	${props => (props.block ? block : null)}
 	${props => (props.transparent ? transparent : null)}
 	${props => (props.primary ? primary : null)}
 	${props => (props.success ? success : null)}

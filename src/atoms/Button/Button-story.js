@@ -9,6 +9,12 @@ storiesOf('Button', module)
 	.add('small', () => (
 		<Button small>Get started</Button>
 	))
+	.add('big', () => (
+		<Button big>Get started</Button>
+	))
+	.add('block', () => (
+		<Button block>Get started</Button>
+	))
 	.add('primary', () => (
 		<Button primary>Get started</Button>
 	))
