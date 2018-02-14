@@ -60,10 +60,10 @@ const disabled = css`
 `;
 
 const shadow = props => css`
-	box-shadow: 0 5px 10px rgba(0,0,0,.1);
+	box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
 
 	&:hover, &:focus {
-		box-shadow: ${props.disabled ? '0 5px 10px rgba(0,0,0,.1)' : '0 5px 10px rgba(0,0,0,.15)'};
+		box-shadow: ${props.disabled ? '0 3px 3px 0 rgba(0,0,0,.1)' : '0 6px 6px 0 rgba(0,0,0,.1)'};
 	}
 `;
 
