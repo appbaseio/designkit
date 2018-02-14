@@ -68,13 +68,13 @@ const shadow = props => css`
 `;
 
 const small = css`
-	padding: 0 10px;
+	padding: 0 14px;
 	height: 28px;
 	font-size: 0.88rem;
 `;
 
 const big = css`
-	padding: 0 20px;
+	padding: 0 25px;
 	height: 44px;
 	font-size: 1rem;
 	line-height: 1rem;
@@ -92,17 +92,17 @@ const Button = styled('a')`
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0 16px;
+	padding: 0 22px;
 	height: 40px;
-	border-radius: ${props => (props.theme.borderRadius ? props.theme.borderRadius : '4px')};
+	border-radius: ${props => (props.theme.borderRadius ? props.theme.borderRadius : '3px')};
 	cursor: pointer;
-	background-color: #f5f5f5;
+	background-color: #eeeded;
 	user-select: none;
 	color: ${props => getTextColor(props)};
 	transition: all .3s ease;
 
 	&:hover, &:focus {
-		background-color: ${shade('#f5f5f5', -0.1)};
+		background-color: ${shade('#eeeded', -0.1)};
 	}
 
 	${props => (props.small ? small : null)}
