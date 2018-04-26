@@ -11,7 +11,7 @@ const H3 = styled('h3')`
 
 	font-size: ${props => props.fontSize || '1.5rem'};
 	line-height: ${props => props.lineHeight || '1.7rem'};
-	font-weight: ${props => props.fontWeight || 'normal'};
+	font-weight: ${props => props.fontWeight || 600};
 `;
 
 export default H3;

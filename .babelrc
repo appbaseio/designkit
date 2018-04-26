@@ -3,7 +3,7 @@
 		[
 			"env", {
 				"targets": {
-					"browsers": ["last 2 versions", "safari >= 7"],
+					"browsers": ["last 2 versions", "safari >= 7"]
 				},
 				"loose": true
 			}
@@ -12,6 +12,8 @@
 	],
 	"plugins": [
 		"emotion",
-		"transform-export-extensions"
+		"transform-export-extensions",
+		"transform-class-properties",
+		"transform-object-rest-spread"
 	]
 }

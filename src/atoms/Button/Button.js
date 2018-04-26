@@ -53,6 +53,15 @@ const alert = props => css`
 	}
 `;
 
+const dark = props => css`
+	color: ${getProperty(props, 'textLight')};
+	background-color: ${getProperty(props, 'darkColor')};
+
+	&:hover, &:focus {
+		background-color: ${shade(getProperty(props, 'darkColor'), -0.1)};
+	}
+`;
+
 const disabled = css`
 	color: #fafafa;
 	background-color: #dedede;
@@ -113,6 +122,7 @@ const Button = styled('a')`
 	${props => (props.success ? success : null)}
 	${props => (props.warning ? warning : null)}
 	${props => (props.alert ? alert : null)}
+	${props => (props.dark ? dark : null)}
 	${props => (props.shadow ? shadow : null)}
 	${props => (props.disabled ? disabled : null)}
 `;

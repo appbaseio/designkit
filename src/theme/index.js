@@ -1,6 +1,6 @@
 const theme = {
 	// typography
-	fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Droid Sans", "Helvetica Neue", sans-serif',
+	fontFamily: '"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Droid Sans", "Helvetica Neue", sans-serif',
 
 	// colors
 	textLight: '#fefefe',
@@ -8,6 +8,7 @@ const theme = {
 
 	primaryColor: '#44C7F4',
 	grayColor: '#e3e5e7',
+	darkColor: '#152F3F',
 	successColor: '#0cd895',
 	warningColor: '#f0cc00',
 	alertColor: '#d9534f',

@@ -12,7 +12,7 @@ const Title = styled('h4')`
 	margin: ${props => props.margin || '0.9rem 0'};
 	font-size: ${props => props.fontSize || '1.1rem'};
 	line-height: ${props => props.lineHeight || '1.3rem'};
-	font-weight: ${props => props.fontWeight || 'normal'};
+	font-weight: ${props => props.fontWeight || 600};
 `;
 
 export default Title;

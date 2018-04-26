@@ -9,9 +9,9 @@ const H2 = styled('h2')`
 	${font};
 	${text};
 
-	font-size: ${props => props.fontSize || '1.9rem'};
-	line-height: ${props => props.lineHeight || '2.1rem'};
-	font-weight: ${props => props.fontWeight || 'normal'};
+	font-size: ${props => props.fontSize || '2rem'};
+	line-height: ${props => props.lineHeight || '2.2rem'};
+	font-weight: ${props => props.fontWeight || 300};
 `;
 
 export default H2;

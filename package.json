@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "precommit": "eslint .",
     "build": "babel src --out-dir lib",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 9001 -s ./static -c .storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "prepublishOnly": "yarn run build"
   },
@@ -32,7 +32,9 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.2",
     "babel-plugin-emotion": "^8.0.12",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "emotion": "^9.0.0",
@@ -54,8 +56,8 @@
     "react-emotion": "^8.0.10"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
     "emotion": "*",
-    "emotion-theming": "*"
+    "emotion-theming": "*",
+    "react": "^16.0.0"
   }
 }

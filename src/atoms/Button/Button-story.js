@@ -18,6 +18,9 @@ storiesOf('Button', module)
 	.add('primary', () => (
 		<Button primary>Get started</Button>
 	))
+	.add('dark', () => (
+		<Button dark>Get started</Button>
+	))
 	.add('success', () => (
 		<Button success>Get started</Button>
 	))
