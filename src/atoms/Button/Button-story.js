@@ -12,6 +12,12 @@ storiesOf('Button', module)
 	.add('big', () => (
 		<Button big>Get started</Button>
 	))
+	.add('bold', () => (
+		<Button bold>Get started</Button>
+	))
+	.add('uppercase', () => (
+		<Button bold uppercase>Get started</Button>
+	))
 	.add('block', () => (
 		<Button block>Get started</Button>
 	))

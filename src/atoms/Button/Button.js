@@ -109,6 +109,9 @@ const Button = styled('a')`
 	user-select: none;
 	color: ${props => getTextColor(props)};
 	transition: all .3s ease;
+	font-weight: ${props => (props.bold ? '600' : '400')};
+	text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
+	letter-spacing: 0.01rem;
 
 	&:hover, &:focus {
 		background-color: ${shade('#eeeded', -0.1)};
