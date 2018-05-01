@@ -5,5 +5,6 @@ export Logo from './atoms/Logo';
 export BannerRow from './atoms/BannerRow';
 export Grid from './atoms/Grid';
 export Card from './atoms/Card';
+export Footer from './atoms/Footer';
 export * from './atoms/typography';
 export Flex from './layouts/Flex';
