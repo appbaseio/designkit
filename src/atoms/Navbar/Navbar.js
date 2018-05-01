@@ -193,7 +193,7 @@ class Navbar extends Component {
 
 	render() {
 		const { children, className, ...props } = this.props;
-		const isOpen = this.state.showMenu ? 'is-open' : '';
+		const isOpen = this.state.showMenu ? 'is-open fixed' : '';
 		return (
 			<Nav id="nav" {...props} className={`${className || ''} ${isOpen}`}>
 				{children}
