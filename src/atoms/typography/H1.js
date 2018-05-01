@@ -4,6 +4,7 @@ import { css } from 'emotion';
 import base from '../../shared/base';
 import font from '../../shared/font';
 import { getTextColor } from '../../shared/utils';
+import queries from '../../shared/mediaQueries';
 
 const text = props => css`
 	margin: ${props.margin || '1.4rem 0 0.5rem'};
@@ -16,9 +17,14 @@ const H1 = styled('h1')`
 	${font};
 	${text};
 
-	font-size: ${props => props.fontSize || '2.5rem'};
-	line-height: ${props => props.lineHeight || '2.7rem'};
+	font-size: ${props => props.fontSize || '3.2rem'};
+	line-height: ${props => props.lineHeight || '4rem'};
 	font-weight: ${props => props.fontWeight || 300};
+
+	${queries('md')} {
+		font-size: 2.5rem;
+		line-height: 3rem;
+	}
 `;
 
 export default H1;

@@ -4,5 +4,5 @@ import GithubButton from '../GithubButton';
 
 storiesOf('Github Button', module)
 	.add('default', () => (
-		<GithubButton shadow count={220} />
+		<GithubButton shadow count="1.6k" />
 	));

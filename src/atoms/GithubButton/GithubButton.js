@@ -42,6 +42,8 @@ const Button = styled('a')`
 
 	.count {
 		background-color: #D6E2E6;
+		text-transform: none;
+		letter-spacing: 0.02rem;
 	}
 `;
 

@@ -6,9 +6,9 @@ import Button from '../Button';
 
 storiesOf('Navbar', module)
 	.add('default', () => (
-		<Navbar gutter="60px">
+		<Navbar gutter="60px" bold dark>
 			<Navbar.Logo>
-				<Logo>
+				<Logo light>
 					<Logo.Icon>
 						<img src="./icon.svg" alt="Icon" />
 					</Logo.Icon>
@@ -17,10 +17,10 @@ storiesOf('Navbar', module)
 				</Logo>
 			</Navbar.Logo>
 			<Navbar.List>
-				<li>Item 1</li>
-				<li>Item 2</li>
-				<li>Item 3</li>
-				<li><Button dark>Get started</Button></li>
+				<li><a href="/">Item 1</a></li>
+				<li><a href="/">Item 2</a></li>
+				<li><a href="/">Item 3</a></li>
+				<li className="button"><Button dark>Get started</Button></li>
 			</Navbar.List>
 		</Navbar>
 	));
