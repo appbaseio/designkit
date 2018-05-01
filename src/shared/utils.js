@@ -8,8 +8,8 @@ export function getTextColor(props) {
 	return (props.theme.textDark ? props.theme.textDark : theme.textDark);
 }
 
-export function getProperty(props, color) {
-	return (props.theme[color] ? props.theme[color] : theme[color]);
+export function getProperty(props, property) {
+	return (props.theme[property] ? props.theme[property] : theme[property]);
 }
 
 export function shade(color, percent) {
