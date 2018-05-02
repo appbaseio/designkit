@@ -17,7 +17,12 @@ const StyledLogo = styled('a')`
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+	text-decoration: none;
 	color: ${props => getTextColor(props)};
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
 
 	& > * {
 		height: 100%;
