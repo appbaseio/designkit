@@ -63,6 +63,7 @@ const Nav = styled('nav')`
 
 		li.button a {
 			color: #fff;
+			line-height: 15px;
 		}
 
 		li.active a {
