@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 
 import base from '../../shared/base';
 import font from '../../shared/font';
-import { getProperty, shade } from '../../shared/utils';
+import { shade, getProperty } from '../../shared/utils';
 
 const Nav = styled('nav')`
 	${base};
@@ -24,8 +24,8 @@ const Nav = styled('nav')`
 	transition: all .3s ease;
 
 	&.fixed {
-		background: ${props => (props.light ? '#fff' : '#021019')};
-		box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.3);
+		background: ${props => (props.dark ? '#021019' : '#fff')};
+		box-shadow: ${props => (props.dark ? '0px 2px 4px 0 rgba(0,0,0,0.3)' : '0px 2px 4px 0 rgba(0,0,0,0.08)')};
 	}
 
 	.list {
@@ -45,20 +45,28 @@ const Nav = styled('nav')`
 
 		a {
 			text-decoration: none;
-			color: ${props => (props.dark ? '#eee' : getProperty(props, 'primaryColor'))};
+			color: ${props => (props.dark ? '#eee' : '#383E43')};
 			transition: all .3s ease;
 			font-size: 14px;
 			font-weight: ${props => (props.bold ? '600' : '400')};
 			text-transform: ${props => (props.bold ? 'uppercase' : 'none')};
 			letter-spacing: 0.02rem;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			border-bottom: 2px solid transparent;
+			transition: all .3s ease;
 
 			&:hover, &:focus {
-				color: ${props => (props.dark ? '#fff' : (shade(getProperty(props, 'primaryColor'), -0.2)))};
+				color: ${props => (props.dark ? '#fff' : (shade('#383E43', -0.2)))};
 			}
 		}
 
 		li.button a {
 			color: #fff;
+		}
+
+		li.active a {
+			border-bottom: 2px solid ${props => (props.dark ? '#eee' : '#383E43')};
 		}
 	}
 
@@ -97,11 +105,16 @@ const Nav = styled('nav')`
 			li.button a {
 				color: #fff;
 			}
+
+			li.active a {
+				border-bottom: 2px solid transparent;
+				color: ${props => getProperty(props, 'primaryColor')};
+			}
 		}
 	}
 `;
 
-const toggleMenu = css`
+const ToggleMenu = styled('button')`
 	display: none;
 	border: 0;
 	background-color: transparent;
@@ -122,7 +135,7 @@ const toggleMenu = css`
 		height: 4px;
 		margin-bottom: 5px;
 		position: relative;
-		background: #cdcdcd;
+		background: ${props => (props.dark ? '#cdcdcd' : '#333')};
 		border-radius: 3px;
 		z-index: 1;
 		transform-origin: 4px 0px;
@@ -165,7 +178,7 @@ const handleScroll = () => {
 };
 
 class Navbar extends Component {
-	static Logo = ({ children }) => (<div>{children}</div>);
+	static Logo = ({ children }) => (<Fragment>{children}</Fragment>);
 	static List = ({ children }) => (<ul className="list">{children}</ul>);
 
 	state = {
@@ -198,14 +211,15 @@ class Navbar extends Component {
 			<Nav id="nav" {...props} className={`${className || ''} ${isOpen}`}>
 				{children}
 
-				<button
-					className={`${toggleMenu} ${this.state.showMenu ? 'active' : ''}`}
+				<ToggleMenu
+					className={this.state.showMenu ? 'active' : ''}
 					onClick={this.toggleMenu}
+					dark={this.props.dark}
 				>
 					<span />
 					<span />
 					<span />
-				</button>
+				</ToggleMenu>
 			</Nav>
 		);
 	}
@@ -214,6 +228,7 @@ class Navbar extends Component {
 Navbar.propTypes = {
 	className: PropTypes.string,
 	fixed: PropTypes.bool,
+	dark: PropTypes.bool,
 	children: PropTypes.any, // eslint-disable-line
 };
 
