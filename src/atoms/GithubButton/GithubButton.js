@@ -2,6 +2,7 @@ import React from 'react';
 import { string, any, bool } from 'prop-types';
 import styled from 'react-emotion';
 
+import Icon from './Icon';
 import base from '../../shared/base';
 import font from '../../shared/font';
 
@@ -47,12 +48,10 @@ const Button = styled('a')`
 	}
 `;
 
-const GithubIcon = () => <img width="30" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Icon" />;
-
 const GithubButton = props => (
 	<Button href={props.href} target={props.target} shadow={props.shadow}>
 		<span>
-			{props.icon || <GithubIcon />}
+			{props.icon || <Icon />}
 			{props.label}
 		</span>
 		<span className="count">{props.count}</span>
