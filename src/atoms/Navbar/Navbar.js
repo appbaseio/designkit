@@ -169,12 +169,15 @@ const ToggleMenu = styled('button')`
 	}
 `;
 
+let isFixed = false;
 const handleScroll = () => {
 	const nav = document.getElementById('nav');
 	if (window.pageYOffset === 0) {
 		nav.classList.remove('fixed');
+		isFixed = false;
 	} else {
 		nav.classList.add('fixed');
+		isFixed = true;
 	}
 };
 
@@ -207,9 +210,9 @@ class Navbar extends Component {
 
 	render() {
 		const { children, className, ...props } = this.props;
-		const isOpen = this.state.showMenu ? 'is-open fixed' : '';
+		const isOpen = this.state.showMenu ? 'is-open' : '';
 		return (
-			<Nav id="nav" {...props} className={`${className || ''} ${isOpen}`}>
+			<Nav id="nav" {...props} className={`${className || ''} ${isOpen} ${isFixed ? 'fixed' : ''}`}>
 				{children}
 
 				<ToggleMenu
