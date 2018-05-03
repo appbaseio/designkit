@@ -112,8 +112,10 @@ const Button = styled('a')`
 	font-weight: ${props => (props.bold ? '600' : '400')};
 	text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 	letter-spacing: 0.01rem;
+	text-decoration: none;
 
 	&:hover, &:focus {
+		text-decoration: none;
 		background-color: ${shade('#eeeded', -0.1)};
 	}
 

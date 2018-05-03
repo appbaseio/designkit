@@ -23,9 +23,11 @@ const Button = styled('a')`
 	cursor: pointer;
 	background-color: #fff;
 	transition: all .3s ease;
+	text-decoration: none;
 
 	&:hover, &:focus {
 		background-color: #fafafa;
+		text-decoration: none;
 	}
 
 	& > span {
