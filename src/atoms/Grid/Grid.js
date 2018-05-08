@@ -26,7 +26,7 @@ const Grid = styled('div')`
 
 		${queries('sm')} {
 			width: ${props => `calc(${100 / getProperty(props, 'size', 'sm')}% - ${getProperty(props, 'gutter', 'sm')})`};
-			margin-bottom: ${props => double(getProperty(props, 'gutter', 'sm'))};
+			margin-bottom: 15px;
 		}
 	}
 `;
