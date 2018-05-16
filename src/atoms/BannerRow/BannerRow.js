@@ -25,12 +25,14 @@ const Column = styled('div')`
 
 	p {
 		color: #ccc;
+		margin-bottom: 40px;
+		line-height: 1.6rem;
 	}
 
 	& > div {
-		padding: 6rem 2.5rem 6rem 20px;
+		padding: 6rem 3rem 6rem 0;
 		max-width: 500px;
-		text-align: left;
+		text-align: center;
 		margin-left: auto;
 		margin-right: 0;
 	}
@@ -39,7 +41,7 @@ const Column = styled('div')`
 		background-color: #021019;
 
 		& > div {
-			padding: 6rem 20px 6rem 2.5rem;
+			padding: 6rem 0 6rem 3rem;
 			margin-left: 0;
 			margin-right: auto;
 			background-color: #021019;
