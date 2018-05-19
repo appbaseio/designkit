@@ -20,7 +20,8 @@ const StyledLogo = styled('a')`
 	text-decoration: none;
 	color: ${props => getTextColor(props)};
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 	}
 
@@ -45,9 +46,13 @@ const darkText = css`
 `;
 
 class Logo extends Component {
-	static Icon = ({ children }) => (<span className={icon}>{children}</span>)
-	static Light = ({ children }) => (<span className={lightText}>{children}</span>);
-	static Dark = ({ children }) => (<span className={darkText}>{children}</span>);
+	static Icon = ({ children }) => <span className={icon}>{children}</span>;
+	static Light = ({ children }) => (
+		<span className={lightText}>{children}</span>
+	);
+	static Dark = ({ children }) => (
+		<span className={darkText}>{children}</span>
+	);
 
 	render() {
 		const { children, ...logoProps } = this.props;

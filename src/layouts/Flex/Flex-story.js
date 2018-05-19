@@ -40,7 +40,11 @@ storiesOf('Flex', module)
 		</Flex>
 	))
 	.add('With alignItems', () => (
-		<Flex alignItems="flex-end" backgroundColor="coral" style={{ height: '300px' }}>
+		<Flex
+			alignItems="flex-end"
+			backgroundColor="coral"
+			style={{ height: '300px' }}
+		>
 			<p>Left Paragraph</p>
 			<p>Right Paragraph</p>
 		</Flex>

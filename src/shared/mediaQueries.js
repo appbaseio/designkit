@@ -10,7 +10,10 @@ function queries(size) {
 }
 
 function toTitleCase(string) {
-	return string.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1));
+	return string.replace(
+		/\w\S*/g,
+		txt => txt.charAt(0).toUpperCase() + txt.substr(1),
+	);
 }
 
 const sizeOrder = ['sm', 'md', 'lg', 'xl'];

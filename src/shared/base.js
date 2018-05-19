@@ -5,9 +5,11 @@ const base = css`
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
-	-moz-font-feature-settings: "liga" on;
+	-moz-font-feature-settings: 'liga' on;
 
-	*, *:after, *:before {
+	*,
+	*:after,
+	*:before {
 		box-sizing: border-box;
 	}
 `;

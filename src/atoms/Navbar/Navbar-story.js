@@ -17,10 +17,18 @@ storiesOf('Navbar', module)
 				</Logo>
 			</Navbar.Logo>
 			<Navbar.List>
-				<li className="active"><a href="/">Item 1</a></li>
-				<li><a href="/">Item 2</a></li>
-				<li><a href="/">Item 3</a></li>
-				<li className="button"><Button dark>Get started</Button></li>
+				<li className="active">
+					<a href="/">Item 1</a>
+				</li>
+				<li>
+					<a href="/">Item 2</a>
+				</li>
+				<li>
+					<a href="/">Item 3</a>
+				</li>
+				<li className="button">
+					<Button dark>Get started</Button>
+				</li>
 			</Navbar.List>
 		</Navbar>
 	))
@@ -36,10 +44,18 @@ storiesOf('Navbar', module)
 				</Logo>
 			</Navbar.Logo>
 			<Navbar.List>
-				<li className="active"><a href="/">Item 1</a></li>
-				<li><a href="/">Item 2</a></li>
-				<li><a href="/">Item 3</a></li>
-				<li className="button"><Button dark>Get started</Button></li>
+				<li className="active">
+					<a href="/">Item 1</a>
+				</li>
+				<li>
+					<a href="/">Item 2</a>
+				</li>
+				<li>
+					<a href="/">Item 3</a>
+				</li>
+				<li className="button">
+					<Button dark>Get started</Button>
+				</li>
 			</Navbar.List>
 		</Navbar>
 	));

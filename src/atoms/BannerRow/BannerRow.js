@@ -66,10 +66,12 @@ const Column = styled('div')`
 `;
 
 export default class BannerRow extends Component {
-	static Column = ({ children, ...props }) => (<Column {...props}>{children}</Column>);
+	static Column = ({ children, ...props }) => (
+		<Column {...props}>{children}</Column>
+	);
 
 	render() {
-		return (<Row>{this.props.children}</Row>);
+		return <Row>{this.props.children}</Row>;
 	}
 }
 

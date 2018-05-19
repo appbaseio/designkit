@@ -15,17 +15,37 @@ const Grid = styled('div')`
 		margin-bottom: ${props => double(props.gutter)};
 
 		${queries('lg')} {
-			width: ${props => `calc(${100 / getProperty(props, 'size', 'lg')}% - ${getProperty(props, 'gutter', 'lg')})`};
-			margin-bottom: ${props => double(getProperty(props, 'gutter', 'lg'))};
+			width: ${props =>
+				`calc(${100 /
+					getProperty(props, 'size', 'lg')}% - ${getProperty(
+					props,
+					'gutter',
+					'lg',
+				)})`};
+			margin-bottom: ${props =>
+				double(getProperty(props, 'gutter', 'lg'))};
 		}
 
 		${queries('md')} {
-			width: ${props => `calc(${100 / getProperty(props, 'size', 'md')}% - ${getProperty(props, 'gutter', 'md')})`};
-			margin-bottom: ${props => double(getProperty(props, 'gutter', 'md'))};
+			width: ${props =>
+				`calc(${100 /
+					getProperty(props, 'size', 'md')}% - ${getProperty(
+					props,
+					'gutter',
+					'md',
+				)})`};
+			margin-bottom: ${props =>
+				double(getProperty(props, 'gutter', 'md'))};
 		}
 
 		${queries('sm')} {
-			width: ${props => `calc(${100 / getProperty(props, 'size', 'sm')}% - ${getProperty(props, 'gutter', 'sm')})`};
+			width: ${props =>
+				`calc(${100 /
+					getProperty(props, 'size', 'sm')}% - ${getProperty(
+					props,
+					'gutter',
+					'sm',
+				)})`};
 			margin-bottom: 15px;
 		}
 	}

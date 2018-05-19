@@ -12,7 +12,7 @@ const Nav = styled('nav')`
 
 	position: fixed;
 	width: 100%;
-	height: ${props => (props.height || '60px')};
+	height: ${props => props.height || '60px'};
 	top: 0;
 	left: 0;
 	padding: 0 15px;
@@ -20,12 +20,18 @@ const Nav = styled('nav')`
 	z-index: 10;
 	justify-content: space-between;
 	align-items: center;
-	background: ${props => (props.dark ? 'linear-gradient(180deg, #041723 0%, rgba(2,16,25,0) 100%)' : 'transparent')};
-	transition: all .3s ease;
+	background: ${props =>
+		props.dark
+			? 'linear-gradient(180deg, #041723 0%, rgba(2,16,25,0) 100%)'
+			: 'transparent'};
+	transition: all 0.3s ease;
 
 	&.fixed {
 		background: ${props => (props.dark ? '#021019' : '#fff')};
-		box-shadow: ${props => (props.dark ? '0px 2px 4px 0 rgba(0,0,0,0.3)' : '0px 2px 4px 0 rgba(0,0,0,0.08)')};
+		box-shadow: ${props =>
+			props.dark
+				? '0px 2px 4px 0 rgba(0,0,0,0.3)'
+				: '0px 2px 4px 0 rgba(0,0,0,0.08)'};
 	}
 
 	.list {
@@ -40,13 +46,14 @@ const Nav = styled('nav')`
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin: ${props => (props.gutter ? `0 0 0 ${props.gutter}` : '0 0 0 40px')};
+			margin: ${props =>
+				props.gutter ? `0 0 0 ${props.gutter}` : '0 0 0 40px'};
 		}
 
 		a {
 			text-decoration: none;
 			color: ${props => (props.dark ? '#eee' : '#383E43')};
-			transition: all .3s ease;
+			transition: all 0.3s ease;
 			font-size: 14px;
 			font-weight: ${props => (props.bold ? '600' : '400')};
 			text-transform: ${props => (props.bold ? 'uppercase' : 'none')};
@@ -54,10 +61,12 @@ const Nav = styled('nav')`
 			padding-top: 2px;
 			padding-bottom: 2px;
 			border-bottom: 2px solid transparent;
-			transition: all .3s ease;
+			transition: all 0.3s ease;
 
-			&:hover, &:focus {
-				color: ${props => (props.dark ? '#fff' : (shade('#383E43', -0.2)))};
+			&:hover,
+			&:focus {
+				color: ${props =>
+					props.dark ? '#fff' : shade('#383E43', -0.2)};
 			}
 		}
 
@@ -67,7 +76,8 @@ const Nav = styled('nav')`
 		}
 
 		li.active a {
-			border-bottom: 2px solid ${props => (props.dark ? '#eee' : '#383E43')};
+			border-bottom: 2px solid
+				${props => (props.dark ? '#eee' : '#383E43')};
 		}
 	}
 
@@ -87,7 +97,7 @@ const Nav = styled('nav')`
 			justify-content: center;
 			align-items: center;
 			background-color: #f3f3f3;
-			transition: all .3s ease;
+			transition: all 0.3s ease;
 
 			li {
 				margin: 0;
@@ -140,9 +150,8 @@ const ToggleMenu = styled('button')`
 		border-radius: 3px;
 		z-index: 1;
 		transform-origin: 4px 0px;
-		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-					background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-					opacity 0.55s ease;
+		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+			background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 
 		&:first-child {
 			transform-origin: 0% 0%;
@@ -182,8 +191,8 @@ const handleScroll = () => {
 };
 
 class Navbar extends Component {
-	static Logo = ({ children }) => (<Fragment>{children}</Fragment>);
-	static List = ({ children }) => (<ul className="list">{children}</ul>);
+	static Logo = ({ children }) => <Fragment>{children}</Fragment>;
+	static List = ({ children }) => <ul className="list">{children}</ul>;
 
 	state = {
 		showMenu: false,
@@ -206,13 +215,19 @@ class Navbar extends Component {
 		this.setState(({ showMenu }) => ({
 			showMenu: !showMenu,
 		}));
-	}
+	};
 
 	render() {
 		const { children, className, ...props } = this.props;
 		const isOpen = this.state.showMenu ? 'is-open' : '';
 		return (
-			<Nav id="nav" {...props} className={`${className || ''} ${isOpen} ${isFixed ? 'fixed' : ''}`}>
+			<Nav
+				id="nav"
+				{...props}
+				className={`${className || ''} ${isOpen} ${
+					isFixed ? 'fixed' : ''
+				}`}
+			>
 				{children}
 
 				<ToggleMenu

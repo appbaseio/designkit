@@ -115,16 +115,14 @@ const list = css`
 `;
 
 export default class Footer extends Component {
-	static Brand = ({ children }) => (<div className={left}>{children}</div>);
-	static Links = ({ children }) => (<div className={right}>{children}</div>);
-	static List = ({ children }) => (<ul className={list}>{children}</ul>);
+	static Brand = ({ children }) => <div className={left}>{children}</div>;
+	static Links = ({ children }) => <div className={right}>{children}</div>;
+	static List = ({ children }) => <ul className={list}>{children}</ul>;
 
 	render() {
 		return (
 			<Section>
-				<Layout>
-					{this.props.children}
-				</Layout>
+				<Layout>{this.props.children}</Layout>
 			</Section>
 		);
 	}

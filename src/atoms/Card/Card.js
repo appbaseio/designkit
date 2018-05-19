@@ -11,7 +11,7 @@ const Card = styled('a')`
 	height: auto;
 	padding: ${props => (props.big ? '60px 45px 32px' : '32px 45px')};
 	border-radius: 2px;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 	background-color: #fff;
 	text-align: center;
 	color: #424242;
@@ -20,7 +20,7 @@ const Card = styled('a')`
 
 	h4 {
 		color: #424242;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 	}
 
 	img {
@@ -35,9 +35,11 @@ const Card = styled('a')`
 		margin: 0 auto 20px;
 	}
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		h4 {
-			color: ${props => (props.href ? (props.theme.primaryColor || 'blue') : '#424242')};
+			color: ${props =>
+				props.href ? props.theme.primaryColor || 'blue' : '#424242'};
 		}
 	}
 `;

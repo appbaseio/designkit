@@ -9,22 +9,21 @@ import { text } from './H1';
 const A = styled('a')`
 	${base};
 	${font};
-	${text}
-
-	text-decoration: none;
+	${text} text-decoration: none;
 	color: ${props => getProperty(props, 'primaryColor')};
 	margin: ${props => props.margin || '0'};
 	font-size: ${props => props.fontSize || '0.9rem'};
 	line-height: ${props => props.lineHeight || '1.1rem'};
 	font-weight: ${props => props.fontWeight || 'normal'};
 	cursor: pointer;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 
-	&:hover, &:focus {
-		color: ${props => (
-		props.theme.primaryColor
-			? shade(props.theme.primaryColor, -0.2)
-			: shade(theme.primaryColor, -0.2))};
+	&:hover,
+	&:focus {
+		color: ${props =>
+			props.theme.primaryColor
+				? shade(props.theme.primaryColor, -0.2)
+				: shade(theme.primaryColor, -0.2)};
 	}
 `;
 

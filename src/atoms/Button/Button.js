@@ -10,7 +10,8 @@ const transparent = props => css`
 	border: 1px solid ${shade(getTextColor(props), 0.7)};
 	background-color: transparent;
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		background-color: transparent;
 		color: ${shade(getTextColor(props), -0.1)};
 		border-color: ${shade(getTextColor(props), 0.5)};
@@ -21,7 +22,8 @@ const primary = props => css`
 	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'primaryColor')};
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		background-color: ${shade(getProperty(props, 'primaryColor'), -0.1)};
 	}
 `;
@@ -30,7 +32,8 @@ const success = props => css`
 	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'successColor')};
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		background-color: ${shade(getProperty(props, 'successColor'), -0.1)};
 	}
 `;
@@ -39,7 +42,8 @@ const warning = props => css`
 	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'warningColor')};
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		background-color: ${shade(getProperty(props, 'warningColor'), -0.1)};
 	}
 `;
@@ -48,7 +52,8 @@ const alert = props => css`
 	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'alertColor')};
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		background-color: ${shade(getProperty(props, 'alertColor'), -0.1)};
 	}
 `;
@@ -57,7 +62,8 @@ const dark = props => css`
 	color: ${getProperty(props, 'textLight')};
 	background-color: ${getProperty(props, 'darkColor')};
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		background-color: ${shade(getProperty(props, 'darkColor'), -0.1)};
 	}
 `;
@@ -69,10 +75,13 @@ const disabled = css`
 `;
 
 const shadow = props => css`
-	box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 
-	&:hover, &:focus {
-		box-shadow: ${props.disabled ? '0 3px 3px 0 rgba(0,0,0,.1)' : '0 6px 6px 0 rgba(0,0,0,.1)'};
+	&:hover,
+	&:focus {
+		box-shadow: ${props.disabled
+			? '0 3px 3px 0 rgba(0,0,0,.1)'
+			: '0 6px 6px 0 rgba(0,0,0,.1)'};
 	}
 `;
 
@@ -99,11 +108,12 @@ const Button = styled('a')`
 	font-size: 0.9rem;
 	line-height: 0.9rem;
 	display: inline-flex;
-	justify-content: center;
+	justify-content: center
 	align-items: center;
 	padding: 0 22px;
 	height: 40px;
-	border-radius: ${props => (props.theme.borderRadius ? props.theme.borderRadius : '3px')};
+	border-radius: ${props =>
+		props.theme.borderRadius ? props.theme.borderRadius : '3px'};
 	cursor: pointer;
 	background-color: #eeeded;
 	user-select: none;

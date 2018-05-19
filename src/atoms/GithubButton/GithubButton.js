@@ -13,19 +13,21 @@ const Button = styled('a')`
 	height: 44px;
 	border-radius: 2px;
 	font-weight: 600;
-	color: #30373C;
+	color: #30373c;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-	box-shadow: ${props => (props.shadow ? '0 3px 3px 0 rgba(0,0,0,0.1)' : 'none')};
+	box-shadow: ${props =>
+		props.shadow ? '0 3px 3px 0 rgba(0,0,0,0.1)' : 'none'};
 	font-size: 14px;
 	cursor: pointer;
 	background-color: #fff;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	text-decoration: none;
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		background-color: #fafafa;
 		text-decoration: none;
 	}
@@ -44,7 +46,7 @@ const Button = styled('a')`
 	}
 
 	.count {
-		background-color: #D6E2E6;
+		background-color: #d6e2e6;
 		text-transform: none;
 		letter-spacing: 0.02rem;
 	}
