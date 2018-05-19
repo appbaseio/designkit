@@ -108,7 +108,7 @@ const Button = styled('a')`
 	font-size: 0.9rem;
 	line-height: 0.9rem;
 	display: inline-flex;
-	justify-content: center
+	justify-content: center;
 	align-items: center;
 	padding: 0 22px;
 	height: 40px;
