@@ -34,7 +34,7 @@ const Column = styled('div')`
 		max-width: 500px;
 		text-align: center;
 		margin-left: auto;
-		margin-right: 0;
+		margin-right: auto;
 	}
 
 	&:last-child {
@@ -42,7 +42,7 @@ const Column = styled('div')`
 
 		& > div {
 			padding: 6rem 0 6rem 3rem;
-			margin-left: 0;
+			margin-left: auto;
 			margin-right: auto;
 			background-color: #021019;
 		}
