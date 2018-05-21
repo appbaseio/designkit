@@ -8,6 +8,7 @@ const theme = {
 	textDark: '#424242',
 
 	primaryColor: '#44C7F4',
+	accentColor: '#4FEE4F',
 	grayColor: '#e3e5e7',
 	darkColor: '#152F3F',
 	successColor: '#0cd895',

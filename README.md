@@ -145,3 +145,9 @@ const AppFooter = ({ theme: { colors } }) => (
 	</Footer>
 );
 ```
+
+## News
+
+```js
+<News>Build native mobile apps with appbase.io and ReactiveSearch</News>
+```
