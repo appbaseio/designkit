@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { any } from 'prop-types';
+import { any, string, object } from 'prop-types';
 import styled, { css } from 'react-emotion';
 
 import base from '../../shared/base';
@@ -120,14 +120,17 @@ export default class Footer extends Component {
 	static List = ({ children }) => <ul className={list}>{children}</ul>;
 
 	render() {
+		const { className, style, children } = this.props;
 		return (
-			<Section>
-				<Layout>{this.props.children}</Layout>
+			<Section className={className} style={style}>
+				<Layout>{children}</Layout>
 			</Section>
 		);
 	}
 }
 
 Footer.propTypes = {
-	children: any, // eslint-disable-line
+	children: any,
+	className: string,
+	style: object,
 };
