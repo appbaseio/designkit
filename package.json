@@ -7,7 +7,8 @@
 		"lib/"
 	],
 	"scripts": {
-		"start": "babel src --out-dir lib --watch",
+		"start": "npm run watch && npm run storybook",
+		"watch": "npm run build --watch",
 		"lint": "eslint .",
 		"precommit": "eslint .",
 		"build": "babel src --out-dir lib",
