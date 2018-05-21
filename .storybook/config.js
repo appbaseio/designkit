@@ -1,10 +1,10 @@
-import React from "react";
-import { configure } from "@storybook/react";
-import { setOptions } from "@storybook/addon-options";
+import React from 'react';
+import { configure } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 
 setOptions({
-	name: "appbase.io",
-	url: "https://github.com/appbaseio/designkit",
+	name: 'appbase.io',
+	url: 'https://github.com/appbaseio/designkit',
 	goFullScreen: false,
 	showLeftPanel: true,
 	showDownPanel: true,
@@ -13,7 +13,7 @@ setOptions({
 });
 
 function loadStories() {
-	const req = require.context("../src", true, /[a-zA-Z0-9]\-story\.js$/);
+	const req = require.context('../lib', true, /[a-zA-Z0-9]\-story\.js$/);
 	req.keys().forEach(filename => req(filename));
 }
 
