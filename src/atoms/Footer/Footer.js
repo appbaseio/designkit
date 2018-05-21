@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { any, string, object } from 'prop-types';
-import styled, { css } from 'react-emotion';
+import styled, { css, cx } from 'react-emotion';
 
 import base from '../../shared/base';
 import font from '../../shared/font';
@@ -115,9 +115,21 @@ const list = css`
 `;
 
 export default class Footer extends Component {
-	static Brand = ({ children }) => <div className={left}>{children}</div>;
-	static Links = ({ children }) => <div className={right}>{children}</div>;
-	static List = ({ children }) => <ul className={list}>{children}</ul>;
+	static Brand = ({ children, className, style }) => (
+		<div style={style} className={cx(left, className)}>
+			{children}
+		</div>
+	);
+	static Links = ({ children, className, style }) => (
+		<div style={style} className={cx(right, className)}>
+			{children}
+		</div>
+	);
+	static List = ({ children, className, style }) => (
+		<ul style={style} className={cx(list, className)}>
+			{children}
+		</ul>
+	);
 
 	render() {
 		const { className, style, children } = this.props;
