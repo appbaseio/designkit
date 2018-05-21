@@ -27,7 +27,7 @@ const Column = styled('div')`
 
 	p {
 		color: #ccc;
-		max-width: 500px;
+		max-width: 450px;
 		margin: 16px auto 40px;
 		line-height: 1.6rem;
 	}
