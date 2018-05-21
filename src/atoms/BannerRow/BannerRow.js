@@ -22,41 +22,23 @@ const Row = styled('div')`
 const Column = styled('div')`
 	width: 50%;
 	background-color: #193244;
+	text-align: center;
+	padding: 6rem 2rem;
 
 	p {
 		color: #ccc;
-		margin-bottom: 40px;
-		line-height: 1.6rem;
-	}
-
-	& > div {
-		padding: 6rem 3rem 6rem 0;
 		max-width: 500px;
-		text-align: center;
-		margin-left: auto;
-		margin-right: 0;
+		margin: 16px auto 40px;
+		line-height: 1.6rem;
 	}
 
 	&:last-child {
 		background-color: #021019;
-
-		& > div {
-			padding: 6rem 0 6rem 3rem;
-			margin-left: 0;
-			margin-right: auto;
-			background-color: #021019;
-		}
 	}
 
 	${queries('md')} {
 		width: 100%;
-
-		& > div {
-			padding: 3rem 2rem !important;
-			text-align: center;
-			margin: 0;
-			max-width: none;
-		}
+		padding: 3rem 2rem;
 
 		p {
 			max-width: 400px;
