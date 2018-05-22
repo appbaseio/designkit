@@ -11,6 +11,7 @@ export * from './atoms/typography';
 
 // molecules
 export News from './molecules/News';
+export Hero from './molecules/Hero';
 
 // layout
 export Flex from './layouts/Flex';

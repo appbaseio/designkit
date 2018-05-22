@@ -151,3 +151,14 @@ const AppFooter = ({ theme: { colors } }) => (
 ```js
 <News>Build native mobile apps with appbase.io and ReactiveSearch</News>
 ```
+
+## Hero
+
+A full width and full height section great for highlighting the landing section of new pages.
+
+```js
+<Hero style={{ background: 'hotpink' }}>
+	<H1>Build native mobile apps with appbase.io and ReactiveSearch</H1>
+	<H2>Appbase Design System</H2>
+</Hero>
+```
