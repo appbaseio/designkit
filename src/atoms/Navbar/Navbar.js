@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
 import base from '../../shared/base';
 import font from '../../shared/font';
@@ -10,7 +10,7 @@ const Nav = styled('nav')`
 	${base};
 	${font};
 
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	height: ${props => props.height || '60px'};
 	top: 0;
@@ -27,6 +27,7 @@ const Nav = styled('nav')`
 	transition: all 0.3s ease;
 
 	&.fixed {
+		position: fixed;
 		background: ${props => (props.dark ? '#021019' : '#fff')};
 		box-shadow: ${props =>
 			props.dark
@@ -178,18 +179,6 @@ const ToggleMenu = styled('button')`
 	}
 `;
 
-let isFixed = false;
-const handleScroll = () => {
-	const nav = document.getElementById('nav');
-	if (window.pageYOffset === 0) {
-		nav.classList.remove('fixed');
-		isFixed = false;
-	} else {
-		nav.classList.add('fixed');
-		isFixed = true;
-	}
-};
-
 class Navbar extends Component {
 	static Logo = ({ children }) => <Fragment>{children}</Fragment>;
 	static List = ({ children }) => <ul className="list">{children}</ul>;
@@ -199,17 +188,30 @@ class Navbar extends Component {
 	};
 
 	componentDidMount() {
+		this.isFixed = false;
 		const nav = document.getElementById('nav');
 		if (this.props.fixed) {
 			nav.classList.add('fixed');
 		} else {
-			window.addEventListener('scroll', handleScroll);
+			window.addEventListener('scroll', this.handleScroll);
 		}
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('scroll', handleScroll);
+		window.removeEventListener('scroll', this.handleScroll);
 	}
+
+	handleScroll = () => {
+		const nav = document.getElementById('nav');
+		const threshold = this.props.fixOffset || 0;
+		if (window.pageYOffset <= threshold) {
+			nav.classList.remove('fixed');
+			this.isFixed = false;
+		} else {
+			nav.classList.add('fixed');
+			this.isFixed = true;
+		}
+	};
 
 	toggleMenu = () => {
 		this.setState(({ showMenu }) => ({
@@ -218,14 +220,15 @@ class Navbar extends Component {
 	};
 
 	render() {
-		const { children, className, ...props } = this.props;
+		const { children, className, fixOffset, ...props } = this.props;
 		const isOpen = this.state.showMenu ? 'is-open' : '';
 		return (
 			<Nav
 				id="nav"
+				fixOffset={fixOffset}
 				{...props}
 				className={`${className || ''} ${isOpen} ${
-					isFixed ? 'fixed' : ''
+					this.isFixed ? 'fixed' : ''
 				}`}
 			>
 				{children}
@@ -247,6 +250,7 @@ class Navbar extends Component {
 Navbar.propTypes = {
 	className: PropTypes.string,
 	fixed: PropTypes.bool,
+	fixOffset: PropTypes.number,
 	dark: PropTypes.bool,
 	children: PropTypes.any, // eslint-disable-line
 };
