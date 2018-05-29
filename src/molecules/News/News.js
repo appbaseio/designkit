@@ -11,10 +11,10 @@ const label = props =>
 	css(
 		{
 			background: getProperty(props, 'accentColor'),
-			fontWeight: 'bold',
 			padding: '3px 15px',
 			borderRadius: 12.5,
 			marginLeft: 20,
+			fontSize: '0.9rem',
 		},
 		{
 			[queries('sm')]: {
