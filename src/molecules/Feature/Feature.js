@@ -29,11 +29,11 @@ class Feature extends Component {
 }
 
 Title.propTypes = {
-	children: oneOfType(node, string),
+	children: oneOfType([node, string]),
 };
 
 Description.propTypes = {
-	children: oneOfType(node, string),
+	children: oneOfType([node, string]),
 };
 
 Feature.propTypes = {
