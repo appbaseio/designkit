@@ -18,11 +18,10 @@ const accent = css({
 
 const curve = ({ curveLeft, curveRight }) =>
 	css({
-		borderTopLeftRadius: curveLeft ? 3 : 0,
-		borderBottomLeftRadius: curveLeft ? 3 : 0,
-		borderTopRightRadius: curveRight ? 3 : 0,
-		borderBottomRightRadius: curveRight ? 3 : 0,
-		minWidth: 185,
+		borderTopLeftRadius: curveLeft ? 20 : 0,
+		borderBottomLeftRadius: curveLeft ? 20 : 0,
+		borderTopRightRadius: curveRight ? 20 : 0,
+		borderBottomRightRadius: curveRight ? 20 : 0,
 		[media('xs')]: {
 			minWidth: 'auto',
 		},
@@ -35,11 +34,11 @@ const Inactive = styled('button')(
 		background: '#86DDF8',
 		color: '#052B37',
 		border: 0,
-		borderRadius: '3px 0 0 3px',
+		borderRadius: '3px 0 0 3px', // make rounder
 		padding: '8px 16px',
 		cursor: 'pointer',
 		fontSize: '0.9rem',
-		fontWeight: 'bold',
+		fontWeight: 600,
 	},
 	curve,
 );
