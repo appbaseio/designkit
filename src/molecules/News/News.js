@@ -11,10 +11,9 @@ const label = props =>
 	css(
 		{
 			background: getProperty(props, 'accentColor'),
-			padding: '3px 15px',
+			padding: '2px 12px',
 			borderRadius: 12.5,
-			marginLeft: 20,
-			fontSize: '0.9rem',
+			fontSize: '0.8rem',
 		},
 		{
 			[queries('sm')]: {
@@ -32,11 +31,11 @@ const container = css({
 	gridTemplateColumns: 'auto auto auto',
 	alignItems: 'center',
 	justifyItems: 'center',
-	gridGap: 20,
-	maxWidth: 680,
+	gridGap: 0,
+	maxWidth: 550,
 	background: 'rgba(255, 255, 255, 0.5)',
-	padding: '15px 0',
-	borderRadius: 4,
+	padding: '5px 0',
+	borderRadius: 15,
 });
 
 const Label = styled.div(label);
@@ -46,8 +45,8 @@ const Container = styled.section(base, font, container);
 const News = ({ children, className, style }) => (
 	<Container className={className} style={style}>
 		<Label>NEW</Label>
-		<div css={{ fontSize: '1rem', fontWeight: 600 }}>{children}</div>
-		<div css={{ margin: '0 20px 0 0' }}>▶</div>
+		<div css={{ fontSize: '0.9rem', fontWeight: 400 }}>{children}</div>
+		<div css={{ margin: '0 10px 0 0' }}>▶</div>
 	</Container>
 );
 
