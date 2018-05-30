@@ -15,13 +15,13 @@ const label = props =>
 		borderRadius: 12.5,
 		fontSize: '0.8rem',
 		margin: '0 3px',
-		[queries('sm')]: {
+		[queries('md')]: {
 			height: 10,
 			width: 10,
 			borderRadius: '50%',
 			fontSize: 0,
 			padding: 0,
-			margin: '0 5px',
+			margin: '0 15px',
 		},
 		[queries('xs')]: {
 			margin: '0 10px',
@@ -38,16 +38,38 @@ const container = css({
 	background: 'rgba(255, 255, 255, 0.5)',
 	padding: '5px 0',
 	borderRadius: 15,
+	[queries('md')]: {
+		gridTemplateColumns: 'auto 1fr auto',
+		padding: '10px 0',
+		maxWidth: '100%',
+		borderRadius: 0,
+	},
 });
+
+const Link = styled('a')(({ theme }) => ({
+	fontSize: '0.9rem',
+	fontWeight: 400,
+	textDecoration: 'none',
+	color: theme.primaryColor,
+	'&:hover': {
+		textDecoration: 'underline',
+		textDecorationSkipInk: 'auto',
+	},
+	[queries('md')]: {
+		justifySelf: 'start',
+	},
+}));
 
 const Label = styled.div(label);
 
 const Container = styled.section(base, font, container);
 
-const News = ({ children, className, style }) => (
+const News = ({ children, className, style, href, target }) => (
 	<Container className={className} style={style}>
 		<Label>NEW</Label>
-		<div css={{ fontSize: '0.9rem', fontWeight: 400 }}>{children}</div>
+		<Link href={href} target={target}>
+			{children}
+		</Link>
 		<Right css={{ margin: '0 10px 0 0', height: '0.9rem' }} />
 	</Container>
 );
@@ -55,6 +77,8 @@ const News = ({ children, className, style }) => (
 News.propTypes = {
 	children: node,
 	className: string,
+	href: string,
+	target: string,
 	style: object,
 };
 
