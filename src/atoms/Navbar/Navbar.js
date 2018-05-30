@@ -57,7 +57,7 @@ const Nav = styled('nav')`
 			transition: all 0.3s ease;
 			font-size: 14px;
 			font-weight: ${props => (props.bold ? '600' : '400')};
-			text-transform: ${props => (props.bold ? 'uppercase' : 'none')};
+			text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 			letter-spacing: 0.02rem;
 			padding-top: 2px;
 			padding-bottom: 2px;
