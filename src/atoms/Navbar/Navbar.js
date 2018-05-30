@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'react-emotion';
+import styled, { cx } from 'react-emotion';
 
 import base from '../../shared/base';
 import font from '../../shared/font';
@@ -57,7 +57,8 @@ const Nav = styled('nav')`
 			transition: all 0.3s ease;
 			font-size: 14px;
 			font-weight: ${props => (props.bold ? '600' : '400')};
-			text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
+			text-transform: ${props =>
+				props.uppercase ? 'uppercase' : 'none'};
 			letter-spacing: 0.02rem;
 			padding-top: 2px;
 			padding-bottom: 2px;
@@ -220,8 +221,17 @@ class Navbar extends Component {
 	};
 
 	render() {
-		const { children, className, fixOffset, ...props } = this.props;
+		const {
+			children,
+			className,
+			fixOffset,
+			toggleMenu,
+			...props
+		} = this.props;
 		const isOpen = this.state.showMenu ? 'is-open' : '';
+		const toggleMenuClass = this.state.showMenu
+			? cx(toggleMenu.className, 'active')
+			: toggleMenu.className;
 		return (
 			<Nav
 				id="nav"
@@ -234,7 +244,7 @@ class Navbar extends Component {
 				{children}
 
 				<ToggleMenu
-					className={this.state.showMenu ? 'active' : ''}
+					className={toggleMenuClass}
 					onClick={this.toggleMenu}
 					dark={this.props.dark}
 				>
@@ -247,11 +257,16 @@ class Navbar extends Component {
 	}
 }
 
+Navbar.defaultProps = {
+	toggleMenu: {},
+};
+
 Navbar.propTypes = {
 	className: PropTypes.string,
 	fixed: PropTypes.bool,
 	fixOffset: PropTypes.number,
 	dark: PropTypes.bool,
+	toggleMenu: PropTypes.object,
 	children: PropTypes.any, // eslint-disable-line
 };
 
