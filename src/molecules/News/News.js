@@ -1,6 +1,7 @@
 import React from 'react';
 import { node, string, object } from 'prop-types';
 import styled, { css } from 'react-emotion';
+import Right from 'react-feather/dist/icons/chevron-right';
 
 import base from '../../shared/base';
 import font from '../../shared/font';
@@ -8,23 +9,24 @@ import { getProperty } from '../../shared/utils';
 import queries from '../../shared/mediaQueries';
 
 const label = props =>
-	css(
-		{
-			background: getProperty(props, 'accentColor'),
-			padding: '2px 12px',
-			borderRadius: 12.5,
-			fontSize: '0.8rem',
+	css({
+		background: getProperty(props, 'accentColor'),
+		padding: '2px 12px',
+		borderRadius: 12.5,
+		fontSize: '0.8rem',
+		margin: '0 3px',
+		[queries('sm')]: {
+			height: 10,
+			width: 10,
+			borderRadius: '50%',
+			fontSize: 0,
+			padding: 0,
+			margin: '0 5px',
 		},
-		{
-			[queries('sm')]: {
-				height: 10,
-				width: 10,
-				borderRadius: '50%',
-				fontSize: 0,
-				padding: 0,
-			},
+		[queries('xs')]: {
+			margin: '0 10px',
 		},
-	);
+	});
 
 const container = css({
 	display: 'grid',
@@ -46,7 +48,7 @@ const News = ({ children, className, style }) => (
 	<Container className={className} style={style}>
 		<Label>NEW</Label>
 		<div css={{ fontSize: '0.9rem', fontWeight: 400 }}>{children}</div>
-		<div css={{ margin: '0 10px 0 0' }}>▶</div>
+		<Right css={{ margin: '0 10px 0 0', height: '0.9rem' }} />
 	</Container>
 );
 
