@@ -34,8 +34,8 @@ const container = css({
 	gridGap: 0,
 	maxWidth: 550,
 	background: 'rgba(255, 255, 255, 0.5)',
-	padding: '6px 0',
-	borderRadius: 4,
+	padding: '5px 0',
+	borderRadius: 15,
 });
 
 const Label = styled.div(label);
@@ -46,7 +46,7 @@ const News = ({ children, className, style }) => (
 	<Container className={className} style={style}>
 		<Label>NEW</Label>
 		<div css={{ fontSize: '0.9rem', fontWeight: 400 }}>{children}</div>
-		<div css={{ margin: '0' }}>▶</div>
+		<div css={{ margin: '0 10px 0 0' }}>▶</div>
 	</Container>
 );
 
