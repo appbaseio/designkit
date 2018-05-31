@@ -5,9 +5,15 @@ import { css, cx } from 'react-emotion';
 import { H3 } from '../../atoms/typography';
 
 const Image = props => <img alt="Feature" {...props} />;
-const Title = ({ children }) => <H3>{children}</H3>;
+const Title = ({ children }) => (
+	<H3 css={{ fontSize: '1.2rem', lineHeight: '1.7rem', fontWeight: 600 }}>
+		{children}
+	</H3>
+);
 const Description = ({ children }) => (
-	<p css={{ fontSize: '1.125rem' }}>{children}</p>
+	<p css={{ fontSize: '1.025rem', maxWidth: 300, margin: '15px auto' }}>
+		{children}
+	</p>
 );
 
 const feat = css({
