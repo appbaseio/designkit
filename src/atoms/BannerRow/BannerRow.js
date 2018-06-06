@@ -53,7 +53,8 @@ export default class BannerRow extends Component {
 	);
 
 	render() {
-		return <Row>{this.props.children}</Row>;
+		const { children, ...props } = this.props;
+		return <Row {...props}>{children}</Row>;
 	}
 }
 
