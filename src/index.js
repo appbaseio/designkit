@@ -14,6 +14,7 @@ export News from './molecules/News';
 export Hero from './molecules/Hero';
 export ToggleButton from './molecules/ToggleButton';
 export Feature from './molecules/Feature';
+export ImageCard from './molecules/ImageCard';
 
 // layout
 export Flex from './layouts/Flex';
