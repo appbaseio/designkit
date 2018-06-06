@@ -3,6 +3,7 @@ import { node, oneOfType, string, object } from 'prop-types';
 import { css, cx } from 'react-emotion';
 
 import { H3 } from '../../atoms/typography';
+import queries from '../../shared/mediaQueries';
 
 const Image = props => <img alt="Feature" {...props} />;
 const Title = ({ children }) => (
@@ -18,6 +19,14 @@ const Description = ({ children }) => (
 
 const feat = css({
 	textAlign: 'center',
+	[queries('lg')]: {
+		margin: 30,
+	},
+	img: {
+		width: 200,
+		height: 165,
+		objectFit: 'contain',
+	},
 });
 
 class Feature extends Component {
