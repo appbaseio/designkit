@@ -7,12 +7,30 @@ import queries from '../../shared/mediaQueries';
 
 const Image = props => <img alt="Feature" {...props} />;
 const Title = ({ children }) => (
-	<H3 css={{ fontSize: '1.2rem', lineHeight: '1.7rem', fontWeight: 600 }}>
+	<H3
+		css={{
+			fontSize: '1.2rem',
+			lineHeight: '1.7rem',
+			fontWeight: 600,
+			[queries('md')]: {
+				fontSize: '1.125rem',
+			},
+		}}
+	>
 		{children}
 	</H3>
 );
 const Description = ({ children }) => (
-	<p css={{ fontSize: '1.025rem', maxWidth: 300, margin: '15px auto' }}>
+	<p
+		css={{
+			fontSize: '1.025rem',
+			maxWidth: 300,
+			margin: '15px auto',
+			[queries('md')]: {
+				fontSize: '0.875rem',
+			},
+		}}
+	>
 		{children}
 	</p>
 );
