@@ -55,6 +55,7 @@ const smallFont = css({
 
 const grayColor = css({
 	color: '#545761',
+	margin: '0 auto',
 });
 
 const Title = styled('h3')(primaryColor, {
