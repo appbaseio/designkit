@@ -23,10 +23,9 @@ const Image = styled('div')`
 
 const Card = styled('div')`
 	height: auto;
-	padding: ${props => (props.big ? '60px 45px 32px' : '32px 45px')};
+	padding: 10px 20px 25px 20px;
 	background-color: #fff;
 	text-align: center;
-	padding-top: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -56,6 +55,9 @@ const smallFont = css({
 const grayColor = css({
 	color: '#545761',
 	margin: '0 auto',
+	'a, a:visited, a:hover': {
+		color: '#545761',
+	},
 });
 
 const Title = styled('h3')(primaryColor, {
