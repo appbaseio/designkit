@@ -83,7 +83,7 @@ const Nav = styled('nav')`
 		}
 	}
 
-	@media all and (max-width: 768px) {
+	@media all and (max-width: 767px) {
 		.list {
 			position: fixed;
 			top: 0;
@@ -138,7 +138,7 @@ const ToggleMenu = styled('button')`
 	margin-top: 7px;
 	cursor: pointer;
 
-	@media all and (max-width: 768px) {
+	@media all and (max-width: 767px) {
 		display: block;
 	}
 
