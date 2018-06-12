@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
-import { string, bool, node } from 'prop-types';
+import { string, bool, node, oneOfType } from 'prop-types';
 
 const Wrapper = styled('div')`
 	position: relative;
@@ -93,7 +93,7 @@ ImageCard.propTypes = {
 	src: string,
 	title: string,
 	description: string,
-	footer: string,
+	footer: oneOfType([string, node]),
 	link: string,
 	big: bool,
 	children: node,
