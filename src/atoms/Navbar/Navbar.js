@@ -96,7 +96,7 @@ const Nav = styled('nav')`
 			position: fixed;
 			top: 0;
 			width: 100%;
-			height: 100%;
+			height: 100vh;
 			max-width: 400px;
 			right: -400px;
 			color: #424242;
@@ -108,6 +108,7 @@ const Nav = styled('nav')`
 			align-items: center;
 			background-color: #f3f3f3;
 			transition: all 0.3s ease;
+			overflow-y: auto;
 
 			li {
 				margin: 0;
@@ -117,6 +118,11 @@ const Nav = styled('nav')`
 
 			&.with-mobile-nav {
 				display: none;
+			}
+
+			&.mobile-nav {
+				justify-content: flex-start;
+				padding-top: 80px;
 			}
 		}
 
