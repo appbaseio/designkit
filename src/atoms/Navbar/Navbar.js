@@ -83,7 +83,15 @@ const Nav = styled('nav')`
 		}
 	}
 
+	.mobile-nav {
+		display: none;
+	}
+
 	@media all and (max-width: 767px) {
+		.mobile-nav {
+			display: block;
+		}
+
 		.list {
 			position: fixed;
 			top: 0;
@@ -105,6 +113,10 @@ const Nav = styled('nav')`
 				margin: 0;
 				width: 100%;
 				padding: 12px 0;
+			}
+
+			&.with-mobile-nav {
+				display: none;
 			}
 		}
 
@@ -182,7 +194,15 @@ const ToggleMenu = styled('button')`
 
 class Navbar extends Component {
 	static Logo = ({ children }) => <Fragment>{children}</Fragment>;
-	static List = ({ children }) => <ul className="list">{children}</ul>;
+	static List = ({ children, renderMobileNav }) =>
+		renderMobileNav ? (
+			<Fragment>
+				<div className="list mobile-nav">{renderMobileNav()}</div>
+				<ul className="list with-mobile-nav">{children}</ul>
+			</Fragment>
+		) : (
+			<ul className="list">{children}</ul>
+		);
 
 	state = {
 		showMenu: false,
