@@ -16,10 +16,7 @@ const Nav = styled('nav')`
 	top: 0;
 	left: 0;
 	padding: 0 15px;
-	display: flex;
 	z-index: 10;
-	justify-content: space-between;
-	align-items: center;
 	background: ${props =>
 		props.dark
 			? 'linear-gradient(180deg, #041723 0%, rgba(2,16,25,0) 100%)'
@@ -58,11 +55,11 @@ const Nav = styled('nav')`
 			font-size: 14px;
 			font-weight: ${props => (props.bold ? '600' : '400')};
 			text-transform: ${props =>
-				props.uppercase ? 'uppercase' : 'none'};
+				props.uppercase ? 'uppercase' : 'inherit'};
 			letter-spacing: 0.02rem;
 			padding-top: 2px;
 			padding-bottom: 2px;
-			border-bottom: 2px solid transparent;
+			border-bottom: 2px solid inherit;
 			transition: all 0.3s ease;
 
 			&:hover,
@@ -153,7 +150,7 @@ const ToggleMenu = styled('button')`
 	outline: none;
 	user-select: none;
 	z-index: 1;
-	margin-top: 7px;
+	margin: 22px 0;
 	cursor: pointer;
 
 	@media all and (max-width: 767px) {
@@ -267,17 +264,26 @@ class Navbar extends Component {
 					this.isFixed ? 'fixed' : ''
 				}`}
 			>
-				{children}
-
-				<ToggleMenu
-					className={toggleMenuClass}
-					onClick={this.toggleMenu}
-					dark={this.props.dark}
+				<div
+					css={{
+						maxWidth: 1400,
+						display: 'flex',
+						justifyContent: 'space-between',
+						alignItems: 'center',
+						margin: '0 auto',
+					}}
 				>
-					<span />
-					<span />
-					<span />
-				</ToggleMenu>
+					{children}
+					<ToggleMenu
+						className={toggleMenuClass}
+						onClick={this.toggleMenu}
+						dark={this.props.dark}
+					>
+						<span />
+						<span />
+						<span />
+					</ToggleMenu>
+				</div>
 			</Nav>
 		);
 	}

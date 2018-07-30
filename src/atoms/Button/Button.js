@@ -102,11 +102,20 @@ const block = css`
 	display: flex;
 `;
 
+const ghost = props => css`
+	background: transparent;
+	border: 1px solid ${getProperty(props, 'primaryColor')};
+	color: ${getProperty(props, 'primaryColor')} !important;
+	&:hover, &:focus {
+		background: transparent;
+	}
+`;
+
 const Button = styled('a')`
 	${base};
 	${font};
-	font-size: 0.9rem;
-	line-height: 0.9rem;
+	font-size: 1rem;
+	line-height: 1rem;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -140,6 +149,7 @@ const Button = styled('a')`
 	${props => (props.dark ? dark : null)}
 	${props => (props.shadow ? shadow : null)}
 	${props => (props.disabled ? disabled : null)}
+	${props => (props.ghost ? ghost : null)}
 `;
 
 export default Button;

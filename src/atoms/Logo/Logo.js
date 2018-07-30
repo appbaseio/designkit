@@ -12,7 +12,7 @@ const StyledLogo = styled('a')`
 
 	display: inline-flex;
 	height: 32px;
-	font-size: 20px;
+	font-size: 26px;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
