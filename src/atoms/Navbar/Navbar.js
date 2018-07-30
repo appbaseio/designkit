@@ -215,7 +215,8 @@ class Navbar extends Component {
 	};
 
 	componentDidMount() {
-		if (!this.props.notFixed) {
+		const { enableScroll = true } = this.props;
+		if (enableScroll) {
 			this.isFixed = false;
 			const nav = document.getElementById('nav');
 			if (this.props.fixed) {
@@ -292,7 +293,7 @@ Navbar.defaultProps = {
 Navbar.propTypes = {
 	className: PropTypes.string,
 	fixed: PropTypes.bool,
-	notFixed: PropTypes.bool,
+	enableScroll: PropTypes.bool,
 	fixOffset: PropTypes.number,
 	dark: PropTypes.bool,
 	toggleMenu: PropTypes.object,
