@@ -1,15 +1,18 @@
 /* eslint-disable */
 import theme from '../theme';
 
-export function getTextColor(props) {
-	if (props.light) {
-		return (props.theme.textLight ? props.theme.textLight : theme.textLight);
+export function getTextColor(props, primary = false) {
+	if (props.primary) {
+		return props.theme.primaryColor || theme.primaryColor;
 	}
-	return (props.theme.textDark ? props.theme.textDark : theme.textDark);
+	if (props.light) {
+		return props.theme.textLight ? props.theme.textLight : theme.textLight;
+	}
+	return props.theme.textDark ? props.theme.textDark : theme.textDark;
 }
 
 export function getProperty(props, property) {
-	return (props.theme[property] ? props.theme[property] : theme[property]);
+	return props.theme[property] ? props.theme[property] : theme[property];
 }
 
 export function shade(color, percent) {

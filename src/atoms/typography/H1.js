@@ -17,7 +17,7 @@ const H1 = styled('h1')`
 	${font};
 	${text};
 
-	font-size: ${props => props.fontSize || '3.2rem'};
+	font-size: ${props => props.fontSize || '3.25rem'};
 	line-height: ${props => props.lineHeight || '4rem'};
 	font-weight: ${props => props.fontWeight || 300};
 

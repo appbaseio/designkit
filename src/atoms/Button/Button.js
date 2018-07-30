@@ -1,5 +1,7 @@
+import React, { Fragment } from 'react';
 import { css } from 'emotion';
 import styled from 'react-emotion';
+import Arrow from 'react-feather/dist/icons/arrow-right';
 
 import base from '../../shared/base';
 import font from '../../shared/font';
@@ -106,7 +108,8 @@ const ghost = props => css`
 	background: transparent;
 	border: 1px solid ${getProperty(props, 'primaryColor')};
 	color: ${getProperty(props, 'primaryColor')} !important;
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		background: transparent;
 	}
 `;
@@ -133,9 +136,18 @@ const Button = styled('a')`
 	letter-spacing: 0.01rem;
 	text-decoration: none;
 
+	svg {
+		height: 1.3rem;
+		margin-left: 5px;
+		transition: 0.3s ease-in-out;
+	}
+
 	&:hover, &:focus {
 		text-decoration: none;
 		background-color: ${shade('#eeeded', -0.1)};
+		svg {
+			padding-left: 3px;
+		}
 	}
 
 	${props => (props.small ? small : null)}
@@ -152,4 +164,13 @@ const Button = styled('a')`
 	${props => (props.ghost ? ghost : null)}
 `;
 
-export default Button;
+const StyledButton = ({ children, arrow, ...props }) => (
+	<Button {...props}>
+		<Fragment>
+			{children}
+			{arrow && <Arrow />}
+		</Fragment>
+	</Button>
+);
+
+export default StyledButton;

@@ -18,3 +18,4 @@ export ImageCard from './molecules/ImageCard';
 
 // layout
 export Flex from './layouts/Flex';
+export GridLayout from './layouts/GridLayout';
