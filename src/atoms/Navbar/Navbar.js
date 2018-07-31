@@ -212,12 +212,15 @@ class Navbar extends Component {
 	};
 
 	componentDidMount() {
-		this.isFixed = false;
-		const nav = document.getElementById('nav');
-		if (this.props.fixed) {
-			nav.classList.add('fixed');
-		} else {
-			window.addEventListener('scroll', this.handleScroll);
+		const { enableScroll } = this.props;
+		if (enableScroll) {
+			this.isFixed = false;
+			const nav = document.getElementById('nav');
+			if (this.props.fixed) {
+				nav.classList.add('fixed');
+			} else {
+				window.addEventListener('scroll', this.handleScroll);
+			}
 		}
 	}
 
@@ -291,11 +294,13 @@ class Navbar extends Component {
 
 Navbar.defaultProps = {
 	toggleMenu: {},
+	enableScroll: true,
 };
 
 Navbar.propTypes = {
 	className: PropTypes.string,
 	fixed: PropTypes.bool,
+	enableScroll: PropTypes.bool,
 	fixOffset: PropTypes.number,
 	dark: PropTypes.bool,
 	toggleMenu: PropTypes.object,
