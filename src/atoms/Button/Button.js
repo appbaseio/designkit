@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { css } from 'emotion';
 import styled from 'react-emotion';
 import Arrow from 'react-feather/dist/icons/arrow-right';
+import { node, bool } from 'prop-types';
 
 import base from '../../shared/base';
 import font from '../../shared/font';
@@ -135,6 +136,7 @@ const Button = styled('a')`
 	text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 	letter-spacing: 0.01rem;
 	text-decoration: none;
+	white-space: nowrap;
 
 	svg {
 		height: 1.3rem;
@@ -172,5 +174,10 @@ const StyledButton = ({ children, arrow, ...props }) => (
 		</Fragment>
 	</Button>
 );
+
+StyledButton.propTypes = {
+	children: node,
+	arrow: bool,
+};
 
 export default StyledButton;

@@ -13,6 +13,7 @@ const Text = styled('p')`
 	font-size: ${props => props.fontSize || '0.9rem'};
 	line-height: ${props => props.lineHeight || '1.1rem'};
 	font-weight: ${props => props.fontWeight || 'normal'};
+	text-transform: ${props => (props.uppercase ? 'uppercase' : 'inherit')};
 `;
 
 export default Text;
