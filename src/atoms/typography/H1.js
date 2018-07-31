@@ -20,10 +20,11 @@ const H1 = styled('h1')`
 	font-size: ${props => props.fontSize || '3.25rem'};
 	line-height: ${props => props.lineHeight || '4rem'};
 	font-weight: ${props => props.fontWeight || 300};
+	margin: ${props => props.margin || 0};
 
 	${queries('md')} {
-		font-size: 2.5rem;
-		line-height: 3rem;
+		font-size: 1.625rem;
+		line-height: 2.25rem;
 	}
 `;
 

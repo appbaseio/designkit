@@ -3,6 +3,7 @@ import styled from 'react-emotion';
 import base from '../../shared/base';
 import font from '../../shared/font';
 import { text } from './H1';
+import queries from '../../shared/mediaQueries';
 
 const H4 = styled('h4')`
 	${base};
@@ -12,6 +13,12 @@ const H4 = styled('h4')`
 	font-size: ${props => props.fontSize || '1.25rem'};
 	line-height: ${props => props.lineHeight || '2rem'};
 	font-weight: ${props => props.fontWeight || 300};
+	margin: ${props => props.margin || 0};
+
+	${queries('md')} {
+		font-size: 0.875rem;
+		line-height: 1.5rem;
+	}
 `;
 
 export default H4;
