@@ -16,6 +16,7 @@ export ToggleButton from './molecules/ToggleButton';
 export Feature from './molecules/Feature';
 export ImageCard from './molecules/ImageCard';
 export Info from './molecules/Info';
+export Testimonial from './molecules/Testimonial';
 
 // layout
 export Flex from './layouts/Flex';
