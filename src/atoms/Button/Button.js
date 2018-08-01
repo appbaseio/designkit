@@ -9,15 +9,14 @@ import font from '../../shared/font';
 import { shade, getTextColor, getProperty } from '../../shared/utils';
 
 const transparent = props => css`
-	color: ${getProperty(props, 'textDark')};
-	border: 1px solid ${shade(getTextColor(props), 0.7)};
+	color: ${getTextColor(props, true)};
 	background-color: transparent;
+	padding: 0;
 
 	&:hover,
 	&:focus {
 		background-color: transparent;
-		color: ${shade(getTextColor(props), -0.1)};
-		border-color: ${shade(getTextColor(props), 0.5)};
+		color: ${shade(getTextColor(props, true), -0.1)};
 	}
 `;
 
@@ -155,7 +154,6 @@ const Button = styled('a')`
 	${props => (props.small ? small : null)}
 	${props => (props.big ? big : null)}
 	${props => (props.block ? block : null)}
-	${props => (props.transparent ? transparent : null)}
 	${props => (props.primary ? primary : null)}
 	${props => (props.success ? success : null)}
 	${props => (props.warning ? warning : null)}
@@ -164,6 +162,7 @@ const Button = styled('a')`
 	${props => (props.shadow ? shadow : null)}
 	${props => (props.disabled ? disabled : null)}
 	${props => (props.ghost ? ghost : null)}
+	${props => (props.transparent ? transparent : null)}
 `;
 
 const StyledButton = ({ children, arrow, ...props }) => (
