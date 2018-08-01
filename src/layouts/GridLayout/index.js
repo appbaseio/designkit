@@ -7,6 +7,7 @@ const GridLayout = styled('div')(props => ({
 	gridGap: props.gridGap || 0,
 	margin: props.margin || 0,
 	alignItems: props.alignItems || 'stretch',
+	justifyItems: props.justifyItems || 'stretch',
 }));
 
 export default GridLayout;
