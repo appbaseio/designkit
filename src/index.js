@@ -15,10 +15,15 @@ export Hero from './molecules/Hero';
 export ToggleButton from './molecules/ToggleButton';
 export Feature from './molecules/Feature';
 export ImageCard from './molecules/ImageCard';
+export Info from './molecules/Info';
 
 // layout
 export Flex from './layouts/Flex';
 export GridLayout from './layouts/GridLayout';
+
+// sections
+export HeroSection from './sections/HeroSection';
+export Section from './sections/Section';
 
 // helpers
 export media from './shared/mediaQueries';

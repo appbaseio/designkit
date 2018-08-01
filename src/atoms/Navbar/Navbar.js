@@ -10,6 +10,7 @@ const Nav = styled('nav')`
 	${base};
 	${font};
 
+	display: flex;
 	position: absolute;
 	width: 100%;
 	height: ${props => props.height || '60px'};
@@ -270,6 +271,7 @@ class Navbar extends Component {
 				<div
 					css={{
 						maxWidth: 1400,
+						width: '100%',
 						display: 'flex',
 						justifyContent: 'space-between',
 						alignItems: 'center',

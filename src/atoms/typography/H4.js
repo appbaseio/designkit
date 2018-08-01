@@ -13,7 +13,6 @@ const H4 = styled('h4')`
 	font-size: ${props => props.fontSize || '1.25rem'};
 	line-height: ${props => props.lineHeight || '2rem'};
 	font-weight: ${props => props.fontWeight || 300};
-	margin: ${props => props.margin || 0};
 
 	${queries('md')} {
 		font-size: 0.875rem;

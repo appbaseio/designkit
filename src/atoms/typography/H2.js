@@ -10,12 +10,13 @@ const H2 = styled('h2')`
 	${font};
 	${text};
 
-	font-size: ${props => props.fontSize || '2rem'};
-	line-height: ${props => props.lineHeight || '2.4rem'};
+	font-size: ${props => props.fontSize || '2.25rem'};
+	line-height: ${props => props.lineHeight || '2.75rem'};
 	font-weight: ${props => props.fontWeight || 300};
 
 	${queries('md')} {
-		font-size: 1.8rem;
+		font-size: 1.375rem;
+		line-height: 2.25rem;
 	}
 `;
 
