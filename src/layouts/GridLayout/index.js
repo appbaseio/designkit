@@ -6,6 +6,7 @@ const GridLayout = styled('div')(props => ({
 	gridTemplateRows: props.gridTemplateRows || 'auto',
 	gridGap: props.gridGap || 0,
 	margin: props.margin || 0,
+	alignItems: props.alignItems || 'stretch',
 }));
 
 export default GridLayout;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { oneOf, node } from 'prop-types';
 
-import { H3, media } from '..';
+import { H3, Title, media } from '..';
 
 const Info = ({ direction, children }) => (
 	<article
@@ -13,6 +13,7 @@ const Info = ({ direction, children }) => (
 			[media('md')]: {
 				gridTemplateColumns: '1fr',
 				justifyItems: 'center',
+				textAlign: 'center',
 			},
 		}}
 	>
@@ -20,7 +21,11 @@ const Info = ({ direction, children }) => (
 	</article>
 );
 
-Info.Title = ({ children }) => <H3>{children}</H3>;
+// description renders title intentionally because of design inconsistencies 🤦‍
+Info.Title = ({ children, ...props }) => <H3 {...props}>{children}</H3>;
+Info.Description = ({ children, ...props }) => (
+	<Title {...props}>{children}</Title>
+);
 Info.Image = props => <img alt="Info" width="50px" {...props} />;
 
 Info.defaultProps = {
@@ -33,6 +38,10 @@ Info.propTypes = {
 };
 
 Info.Title.propTypes = {
+	children: node,
+};
+
+Info.Description.propTypes = {
 	children: node,
 };
 

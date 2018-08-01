@@ -1,6 +1,6 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
-import { node } from 'prop-types';
+import styled from 'react-emotion';
+import { node, object } from 'prop-types';
 
 import media from '../shared/mediaQueries';
 
@@ -14,27 +14,28 @@ const OuterSection = styled('section')(props => ({
 	},
 }));
 
-const innerSection = css({
-	maxWidth: 1200,
+const InnerSection = styled('div')(props => ({
+	maxWidth: props.maxWidth || 1200,
 	margin: '0 auto',
 	display: 'grid',
-	gridTemplateColumns: '1fr 1fr',
+	gridTemplateColumns: props.columns || '1fr 1fr',
 	gridGap: 50,
 	alignItems: 'center',
 	[media('md')]: {
 		gridTemplateColumns: '1fr',
 		justifyItems: 'center',
 	},
-});
+}));
 
-const Section = ({ children }) => (
-	<OuterSection>
-		<div css={innerSection}>{children}</div>
+const Section = ({ children, innerSectionProps, ...props }) => (
+	<OuterSection {...props}>
+		<InnerSection {...innerSectionProps}>{children}</InnerSection>
 	</OuterSection>
 );
 
 Section.propTypes = {
 	children: node,
+	innerSectionProps: object,
 };
 
 export default Section;
