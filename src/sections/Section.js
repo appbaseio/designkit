@@ -9,6 +9,7 @@ const OuterSection = styled('section')(props => ({
 	padding: '80px 50px',
 	display: 'flex',
 	alignItems: 'center',
+	overflow: 'hidden',
 	[media('md')]: {
 		padding: '50px 25px',
 	},
