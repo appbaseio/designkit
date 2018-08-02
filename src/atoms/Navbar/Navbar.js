@@ -18,10 +18,6 @@ const Nav = styled('nav')`
 	left: 0;
 	padding: 0 15px;
 	z-index: 10;
-	background: ${props =>
-		props.dark
-			? 'linear-gradient(180deg, #041723 0%, rgba(2,16,25,0) 100%)'
-			: 'transparent'};
 	transition: all 0.3s ease;
 
 	&.fixed {
