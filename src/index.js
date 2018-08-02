@@ -17,6 +17,7 @@ export Feature from './molecules/Feature';
 export ImageCard from './molecules/ImageCard';
 export Info from './molecules/Info';
 export Testimonial from './molecules/Testimonial';
+export Faq from './molecules/Faq';
 
 // layout
 export Flex from './layouts/Flex';
