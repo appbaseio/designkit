@@ -20,6 +20,7 @@ const H1 = styled('h1')`
 	font-size: ${props => props.fontSize || '3.25rem'};
 	line-height: ${props => props.lineHeight || '4rem'};
 	font-weight: ${props => props.fontWeight || 300};
+	text-align: ${props => (props.center ? 'center' : 'inherit')};
 
 	${queries('md')} {
 		font-size: 1.625rem;
