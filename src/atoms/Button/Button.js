@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { css } from 'emotion';
 import styled from 'react-emotion';
 import Arrow from 'react-feather/dist/icons/arrow-right';
+import Link from 'react-feather/dist/icons/external-link';
 import { node, bool } from 'prop-types';
 
 import base from '../../shared/base';
@@ -114,6 +115,29 @@ const ghost = props => css`
 	}
 `;
 
+const arrowStyles = css`
+	svg {
+		height: 1.3rem;
+		margin-left: 5px;
+		transition: 0.3s ease-in-out;
+	}
+
+	&:hover,
+	&:focus {
+		svg {
+			padding-left: 3px;
+		}
+	}
+`;
+
+const linkStyles = css`
+	svg {
+		height: 1.3rem;
+		margin-right: 5px;
+		transition: 0.3s ease-in-out;
+	}
+`;
+
 const Button = styled('a')`
 	${base};
 	${font};
@@ -137,18 +161,9 @@ const Button = styled('a')`
 	text-decoration: none;
 	white-space: nowrap;
 
-	svg {
-		height: 1.3rem;
-		margin-left: 5px;
-		transition: 0.3s ease-in-out;
-	}
-
 	&:hover, &:focus {
 		text-decoration: none;
 		background-color: ${shade('#eeeded', -0.1)};
-		svg {
-			padding-left: 3px;
-		}
 	}
 
 	${props => (props.small ? small : null)}
@@ -163,11 +178,17 @@ const Button = styled('a')`
 	${props => (props.disabled ? disabled : null)}
 	${props => (props.ghost ? ghost : null)}
 	${props => (props.transparent ? transparent : null)}
+	${props => (props.arrow ? arrowStyles : null)}
+	${props => (props.link ? linkStyles : null)}
 `;
 
-const StyledButton = ({ children, arrow, ...props }) => (
-	<Button {...props}>
+const StyledButton = ({ children, arrow, link, ...props }) => (
+	<Button arrow={arrow} link={link} {...props}>
 		<Fragment>
+			{link && (
+				// eslint-disable-next-line
+				<Link />
+			)}
 			{children}
 			{arrow && <Arrow />}
 		</Fragment>
@@ -177,6 +198,7 @@ const StyledButton = ({ children, arrow, ...props }) => (
 StyledButton.propTypes = {
 	children: node,
 	arrow: bool,
+	link: bool,
 };
 
 export default StyledButton;
