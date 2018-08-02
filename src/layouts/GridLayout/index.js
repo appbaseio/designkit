@@ -8,6 +8,7 @@ const GridLayout = styled('div')(props => ({
 	margin: props.margin || 0,
 	alignItems: props.alignItems || 'stretch',
 	justifyItems: props.justifyItems || 'stretch',
+	justifyContent: props.justifyItems || 'normal',
 	gridAutoFlow: props.gridAutoFlow || 'row',
 }));
 
