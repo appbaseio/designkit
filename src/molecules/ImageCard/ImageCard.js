@@ -75,7 +75,15 @@ const Link = styled('a')(primaryColor, smallFont, {
 	fontWeight: 600,
 });
 
-const ImageCard = ({ src, big, title, description, footer, link }) => (
+const ImageCard = ({
+	src,
+	big,
+	title,
+	description,
+	footer,
+	link,
+	linkText,
+}) => (
 	<Wrapper>
 		<Image src={src} big={big} />
 		<Card>
@@ -83,11 +91,15 @@ const ImageCard = ({ src, big, title, description, footer, link }) => (
 			<Description>{description}</Description>
 			<Footer>{footer}</Footer>
 			<Link href={link} target="_blank" rel="noreferrer noopener">
-				READ MORE
+				{linkText}
 			</Link>
 		</Card>
 	</Wrapper>
 );
+
+ImageCard.defaultProps = {
+	linkText: 'READ MORE',
+};
 
 ImageCard.propTypes = {
 	src: string,
@@ -97,6 +109,7 @@ ImageCard.propTypes = {
 	link: string,
 	big: bool,
 	children: node,
+	linkText: string,
 };
 
 export default ImageCard;
