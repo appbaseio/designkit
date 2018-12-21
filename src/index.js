@@ -18,6 +18,7 @@ export ImageCard from './molecules/ImageCard';
 export Info from './molecules/Info';
 export Testimonial from './molecules/Testimonial';
 export Faq from './molecules/Faq';
+export HoverCard from './molecules/HoverCard';
 
 // layout
 export Flex from './layouts/Flex';
