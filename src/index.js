@@ -7,6 +7,7 @@ export BannerRow from './atoms/BannerRow';
 export Grid from './atoms/Grid';
 export Card from './atoms/Card';
 export Footer from './atoms/Footer';
+export Overlay from './atoms/Overlay';
 export * from './atoms/typography';
 
 // molecules
@@ -18,6 +19,7 @@ export ImageCard from './molecules/ImageCard';
 export Info from './molecules/Info';
 export Testimonial from './molecules/Testimonial';
 export Faq from './molecules/Faq';
+export HoverCard from './molecules/HoverCard';
 
 // layout
 export Flex from './layouts/Flex';
