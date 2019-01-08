@@ -7,6 +7,7 @@ export BannerRow from './atoms/BannerRow';
 export Grid from './atoms/Grid';
 export Card from './atoms/Card';
 export Footer from './atoms/Footer';
+export AppFooter from './atoms/AppFooter';
 export Overlay from './atoms/Overlay';
 export * from './atoms/typography';
 

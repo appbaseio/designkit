@@ -1,6 +1,6 @@
 {
 	"name": "@appbaseio/designkit",
-	"version": "0.9.3",
+	"version": "0.9.4",
 	"description": "Design kit for appbaseio ecosystem",
 	"main": "lib/index.js",
 	"files": ["lib/"],
@@ -12,6 +12,7 @@
 		"precommit": "lint-staged",
 		"build": "babel src --out-dir lib",
 		"storybook": "start-storybook -p 9001 -s ./static -c .storybook",
+		"build-storybook": "build-storybook -c .storybook -o .out",
 		"deploy-storybook": "storybook-to-ghpages",
 		"prepublishOnly": "yarn run build"
 	},
