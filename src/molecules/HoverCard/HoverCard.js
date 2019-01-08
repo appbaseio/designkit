@@ -110,11 +110,12 @@ const Actions = ({
 		)}
 	</Flex>
 );
+Actions.displayName = 'Actions';
 
 const OverlayContent = ({ children }) => (
 	<div css="padding: 15px 16px 15px 16px">{children}</div>
 );
-
+OverlayContent.displayName = 'OverlayContent';
 class HoverCard extends React.Component {
 	static Title = Title;
 	static Description = Description;
@@ -126,13 +127,14 @@ class HoverCard extends React.Component {
 			children &&
 			children.filter(
 				e =>
-					e.type.name !== 'Actions' &&
-					e.type.name !== 'OverlayContent',
+					e.type.displayName !== 'Actions' &&
+					e.type.displayName !== 'OverlayContent',
 			);
 		const actionChild =
-			children && children.find(e => e.type.name === 'Actions');
+			children && children.find(e => e.type.displayName === 'Actions');
 		const overlayChild =
-			children && children.find(e => e.type.name === 'OverlayContent');
+			children &&
+			children.find(e => e.type.displayName === 'OverlayContent');
 		return (
 			<div css={main} {...props}>
 				<Overlay content={overlayChild}>
