@@ -1,11 +1,20 @@
 import React from 'react';
 import { FaHeart as Heart } from 'react-icons/fa';
-import { string, oneOfType, node, number, func, object } from 'prop-types';
+import {
+	string,
+	oneOfType,
+	node,
+	number,
+	func,
+	object,
+	bool,
+} from 'prop-types';
 import { css } from 'emotion';
 import queries from '../../shared/mediaQueries';
 import Flex from '../../layouts/Flex';
 import { H3 } from '../../atoms/typography';
 import Overlay from '../../atoms/Overlay';
+import LazyImage from '../../atoms/LazyImage/LazyImage';
 
 const main = css`
 	border-radius: 1px;
@@ -122,7 +131,7 @@ class HoverCard extends React.Component {
 	static Actions = Actions;
 	static Overlay = OverlayContent;
 	render() {
-		const { cover, children, ...props } = this.props;
+		const { cover, children, showImagePlaceholder, ...props } = this.props;
 		const filteredChilds =
 			children &&
 			children.filter(
@@ -138,7 +147,16 @@ class HoverCard extends React.Component {
 		return (
 			<div css={main} {...props}>
 				<Overlay content={overlayChild}>
-					<img css={image} alt="product" src={cover} />
+					{showImagePlaceholder ? (
+						<LazyImage
+							style={{ width: '100%' }}
+							alt="product"
+							src={cover}
+						/>
+					) : (
+						<img css={image} alt="product" src={cover} />
+					)}
+
 					<div css="padding: 15px 16px 15px 16px">
 						{filteredChilds}
 					</div>
@@ -162,6 +180,7 @@ Actions.propTypes = {
 HoverCard.propTypes = {
 	cover: string,
 	children: oneOfType([node, string]),
+	showImagePlaceholder: bool,
 };
 Title.propTypes = {
 	children: oneOfType([node, string]),
