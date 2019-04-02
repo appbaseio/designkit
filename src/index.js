@@ -9,6 +9,7 @@ export Card from './atoms/Card';
 export Footer from './atoms/Footer';
 export AppFooter from './atoms/AppFooter';
 export Overlay from './atoms/Overlay';
+export LazyImage from './atoms/LazyImage';
 export * from './atoms/typography';
 
 // molecules
