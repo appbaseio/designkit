@@ -243,6 +243,19 @@ class Navbar extends Component {
 		}));
 	};
 
+	checkListComponent = () => {
+		const { children } = this.props;
+		let isList = false;
+		React.Children.forEach(children, child => {
+			if (child.type === Navbar.List) {
+				isList = true;
+				return false;
+			}
+			return true;
+		});
+		return isList;
+	};
+
 	render() {
 		const {
 			children,
@@ -255,6 +268,7 @@ class Navbar extends Component {
 		const toggleMenuClass = this.state.showMenu
 			? cx(toggleMenu.className, 'active')
 			: toggleMenu.className;
+		const isNavbarList = this.checkListComponent();
 		return (
 			<Nav
 				id="nav"
@@ -275,15 +289,17 @@ class Navbar extends Component {
 					}}
 				>
 					{children}
-					<ToggleMenu
-						className={toggleMenuClass}
-						onClick={this.toggleMenu}
-						dark={this.props.dark}
-					>
-						<span />
-						<span />
-						<span />
-					</ToggleMenu>
+					{isNavbarList ? (
+						<ToggleMenu
+							className={toggleMenuClass}
+							onClick={this.toggleMenu}
+							dark={this.props.dark}
+						>
+							<span />
+							<span />
+							<span />
+						</ToggleMenu>
+					) : null}
 				</div>
 			</Nav>
 		);
