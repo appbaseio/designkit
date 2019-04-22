@@ -243,6 +243,14 @@ class Navbar extends Component {
 		}));
 	};
 
+	get isNavbarList() {
+		const { children } = this.props;
+		const isList = React.Children.toArray(children).find(
+			child => child.type === Navbar.List,
+		);
+		return isList;
+	}
+
 	render() {
 		const {
 			children,
@@ -275,15 +283,17 @@ class Navbar extends Component {
 					}}
 				>
 					{children}
-					<ToggleMenu
-						className={toggleMenuClass}
-						onClick={this.toggleMenu}
-						dark={this.props.dark}
-					>
-						<span />
-						<span />
-						<span />
-					</ToggleMenu>
+					{this.isNavbarList ? (
+						<ToggleMenu
+							className={toggleMenuClass}
+							onClick={this.toggleMenu}
+							dark={this.props.dark}
+						>
+							<span />
+							<span />
+							<span />
+						</ToggleMenu>
+					) : null}
 				</div>
 			</Nav>
 		);
