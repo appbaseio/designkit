@@ -243,18 +243,13 @@ class Navbar extends Component {
 		}));
 	};
 
-	checkListComponent = () => {
+	get isNavbarList() {
 		const { children } = this.props;
-		let isList = false;
-		React.Children.forEach(children, child => {
-			if (child.type === Navbar.List) {
-				isList = true;
-				return false;
-			}
-			return true;
-		});
+		const isList = React.Children.toArray(children).find(
+			child => child.type === Navbar.List,
+		);
 		return isList;
-	};
+	}
 
 	render() {
 		const {
@@ -268,7 +263,6 @@ class Navbar extends Component {
 		const toggleMenuClass = this.state.showMenu
 			? cx(toggleMenu.className, 'active')
 			: toggleMenu.className;
-		const isNavbarList = this.checkListComponent();
 		return (
 			<Nav
 				id="nav"
@@ -289,7 +283,7 @@ class Navbar extends Component {
 					}}
 				>
 					{children}
-					{isNavbarList ? (
+					{this.isNavbarList ? (
 						<ToggleMenu
 							className={toggleMenuClass}
 							onClick={this.toggleMenu}
