@@ -1,12 +1,13 @@
-/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { css } from 'emotion';
-import { object, array } from 'prop-types';
+import { array, string, object } from 'prop-types';
 import { ChevronRight, ChevronLeft } from 'react-feather';
+import Quote from './Quotes';
 
 const container = css`
+	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -20,7 +21,6 @@ const container = css`
 		color: #2d1a5a;
 		padding: 10px;
 		border-radius: 50%;
-		background: #b89aea;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -31,15 +31,26 @@ const container = css`
 		transform: translateY(-50%);
 		transition: all ease 0.2s;
 		box-shadow: 0 0px 4px 1px rgba(0, 0, 0, 0.3);
+		@media (max-width: 576px) {
+			padding: 6px;
+		}
 	}
 	.arrow:hover {
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	}
 	.arrow.left {
 		left: 0px;
+		@media (max-width: 576px) {
+			left: 33%;
+			top: 110%;
+		}
 	}
 	.arrow.right {
 		right: 0px;
+		@media (max-width: 576px) {
+			right: 33%;
+			top: 110%;
+		}
 	}
 `;
 
@@ -170,25 +181,35 @@ class Testimonials extends React.Component {
 		const { testimonials } = this.props;
 		const item = testimonials[selectedIndex];
 		return (
-			<div className={container} tabIndex="0" onKeyDown={this.handleKey}>
+			<div
+				className={container}
+				role="button"
+				tabIndex="0"
+				onKeyDown={this.handleKey}
+			>
 				{testimonials.length > 1 && (
-					<div className="arrow left" onClick={this.handlePrevious}>
-						<ChevronLeft />
+					<div
+						className="arrow left"
+						onClick={this.handlePrevious}
+						role="button"
+						tabIndex="0"
+						onKeyDown={this.handleKey}
+						style={{ background: this.props.primaryColor }}
+					>
+						{this.props.leftIcon}
 					</div>
 				)}
 
 				<div key={item.from} className={testimonial}>
-					<img
-						src="https://svgshare.com/i/CyC.svg"
-						className="quotes start"
-						alt="testimonial"
-					/>
+					<div className="quotes start">
+						{' '}
+						<Quote fill={this.props.primaryColor} />
+					</div>
+					<div className="quotes end">
+						{' '}
+						<Quote fill={this.props.primaryColor} />
+					</div>
 
-					<img
-						src="https://svgshare.com/i/CyC.svg"
-						className="quotes end"
-						alt="testimonial"
-					/>
 					<p>{item.description}</p>
 					<div className="avatar">
 						<div className="image">
@@ -199,8 +220,15 @@ class Testimonials extends React.Component {
 					</div>
 				</div>
 				{testimonials.length > 1 && (
-					<div className="arrow right" onClick={this.handleNext}>
-						<ChevronRight />
+					<div
+						className="arrow right"
+						onClick={this.handleNext}
+						role="button"
+						tabIndex="0"
+						onKeyDown={this.handleKey}
+						style={{ background: this.props.primaryColor }}
+					>
+						{this.props.rightIcon}
 					</div>
 				)}
 			</div>
@@ -208,9 +236,19 @@ class Testimonials extends React.Component {
 	}
 }
 
+Testimonials.defaultProps = {
+	primaryColor: '#b89aea',
+	leftIcon: <ChevronLeft />,
+	rightIcon: <ChevronRight />,
+};
+
 Testimonials.propTypes = {
-	testimonials: array,
 	style: object,
+	className: string,
+	testimonials: array,
+	rightIcon: object,
+	leftIcon: object,
+	primaryColor: string,
 };
 
 export default Testimonials;

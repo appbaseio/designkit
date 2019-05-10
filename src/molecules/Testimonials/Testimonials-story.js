@@ -1,10 +1,13 @@
-/* eslint-disable jsx-a11y/aria-role */
 import React from 'react';
+import { ChevronLeft, ChevronRight } from 'react-feather';
 import { storiesOf } from '@storybook/react';
 import Testimonials from '.';
 
 storiesOf('Testimonials', module).add('default', () => (
 	<Testimonials
+		primaryColor="#b89aea"
+		leftIcon={<ChevronLeft />}
+		rightIcon={<ChevronRight />}
 		testimonials={[
 			{
 				image:
