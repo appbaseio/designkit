@@ -22,6 +22,8 @@ export Info from './molecules/Info';
 export Testimonial from './molecules/Testimonial';
 export Faq from './molecules/Faq';
 export HoverCard from './molecules/HoverCard';
+export Timeline from './molecules/Timeline';
+export TimelineOption from './molecules/TimelineOption';
 
 // layout
 export Flex from './layouts/Flex';
