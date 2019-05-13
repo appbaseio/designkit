@@ -21,11 +21,13 @@ storiesOf('InfoCards', module).add('default', () => (
 				title="Card title"
 				description="I am the description"
 				subtitle="Subtitle"
+				iconAtRight
 			/>
 			<InfoCards.Card
 				icon={<Play />}
 				title="Card Icon"
 				description="I am the description"
+				iconAtRight
 			/>
 		</InfoCards.Section>
 

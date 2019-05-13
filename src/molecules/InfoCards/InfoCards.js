@@ -19,11 +19,7 @@ const container = css`
 			border-left: 2px solid transparent;
 			box-shadow: 0 0 2px #e8e8e8;
 			transition: all ease 0.2s;
-			.content {
-				display: grid;
-				grid-template-columns: auto;
-				grid-gap: 5px;
-			}
+
 			.subtitle {
 				height: 0;
 				overflow: hidden;
@@ -65,13 +61,15 @@ class InfoCards extends React.Component {
 					onMouseEnter={() => onMouseEnter(props)}
 					onMouseLeave={onMouseLeave}
 				>
-					{props.icon && <div>{props.icon}</div>}
-					<div className="cotent">
+					{props.icon &&
+						!props.iconAtRight && <div>{props.icon}</div>}
+					<div>
 						<h1 className="title">{props.title}</h1>
 						{props.subtitle && (
 							<p className="subtitle">{props.subtitle}</p>
 						)}
 					</div>
+					{props.icon && props.iconAtRight && <div>{props.icon}</div>}
 				</div>
 			)}
 		</Context.Consumer>
@@ -111,4 +109,5 @@ class InfoCards extends React.Component {
 		);
 	}
 }
+
 export default InfoCards;
