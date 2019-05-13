@@ -1,13 +1,12 @@
 {
 	"name": "@appbaseio/designkit",
-	"version": "0.9.6",
+	"version": "0.9.7",
 	"description": "Design kit for appbaseio ecosystem",
 	"main": "lib/index.js",
-	"files": [
-		"lib/"
-	],
+	"files": ["lib/"],
 	"scripts": {
-		"start": "concurrently --kill-others \"npm run watch\" \"npm run storybook\"",
+		"start":
+			"concurrently --kill-others \"npm run watch\" \"npm run storybook\"",
 		"watch": "babel src --out-dir lib --watch",
 		"lint": "eslint .",
 		"precommit": "lint-staged",
@@ -18,9 +17,7 @@
 		"prepublishOnly": "yarn run build"
 	},
 	"lint-staged": {
-		"*.js": [
-			"eslint"
-		]
+		"*.js": ["eslint"]
 	},
 	"repository": {
 		"type": "git",
