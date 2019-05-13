@@ -3,7 +3,7 @@ import { css } from 'emotion';
 
 const container = css`
 	display: grid;
-	grid-template-columns: 1fr 0.5fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
 
 	.card-container {
@@ -13,6 +13,7 @@ const container = css`
 		.card {
 			width: 100%;
 			display: grid;
+			height: 110px;
 			grid-template-columns: auto 1fr;
 			grid-gap: 5px;
 			align-items: center;
@@ -32,6 +33,13 @@ const container = css`
 			}
 		}
 	}
+`;
+
+const middleSection = css`
+	height: 235px;
+	overflow: hidden;
+	border: 1px solid grey;
+	text-overflow: ellipsis;
 `;
 
 const Context = React.createContext(null);
@@ -84,9 +92,11 @@ class InfoCards extends React.Component {
 	);
 
 	static MainSection = props => (
-		<Context.Consumer>
-			{({ selectedItem }) => props.children(selectedItem)}
-		</Context.Consumer>
+		<div className={middleSection}>
+			<Context.Consumer>
+				{({ selectedItem }) => props.children(selectedItem)}
+			</Context.Consumer>
+		</div>
 	);
 
 	render() {
