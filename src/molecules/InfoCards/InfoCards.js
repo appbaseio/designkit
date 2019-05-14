@@ -22,7 +22,8 @@ const container = css`
 			height: 110px;
 			padding: 5px;
 			display: grid;
-			grid-template-columns: auto auto;
+			height: 110px;
+			grid-template-columns: auto 1fr;
 			grid-gap: 5px;
 			align-items: center;
 			border-left: 3px solid transparent;
