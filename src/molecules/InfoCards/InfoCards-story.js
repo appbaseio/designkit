@@ -3,13 +3,12 @@ import { storiesOf } from '@storybook/react';
 import { Play } from 'react-feather';
 import InfoCards from './InfoCards';
 import LazyImage from '../../atoms/LazyImage';
-import { Title } from '../../atoms/typography';
-import Card from '../../atoms/Card';
+import { H3 } from '../../atoms/typography';
 
 storiesOf('InfoCards', module).add('default', () => (
 	<InfoCards
 		color={{
-			primary: '#180Aff',
+			primary: '#2971fe',
 			title: '#262626',
 			subtitle: '#595959',
 			description: '#bfbfbf',
@@ -19,14 +18,14 @@ storiesOf('InfoCards', module).add('default', () => (
 		<InfoCards.Section>
 			<InfoCards.Card
 				title="Card title"
-				description="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-				subtitle="Subtitle"
+				description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+				subtitle="Lorem Ipsum is simply dummy text"
 				iconAtRight
 			/>
 			<InfoCards.Card
 				icon={<Play />}
 				title="Card Icon"
-				description="I am the description"
+				description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."
 				iconAtRight
 			/>
 		</InfoCards.Section>
@@ -34,8 +33,8 @@ storiesOf('InfoCards', module).add('default', () => (
 		<InfoCards.MainSection>
 			{selectedItem =>
 				selectedItem ? (
-					<div style={{ textAlign: 'left' }}>
-						<Title>{selectedItem.title}</Title>
+					<div style={{ textAlign: 'center', padding: '10px' }}>
+						<H3>{selectedItem.title}</H3>
 						<p>{selectedItem.description}</p>
 					</div>
 				) : (
@@ -51,12 +50,12 @@ storiesOf('InfoCards', module).add('default', () => (
 		<InfoCards.Section>
 			<InfoCards.Card
 				title="Card title"
-				description="I am the description"
+				description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."
 			/>
 			<InfoCards.Card
 				icon={<Play />}
 				title="Card Icon"
-				description="I am the description"
+				description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."
 			/>
 		</InfoCards.Section>
 	</InfoCards>

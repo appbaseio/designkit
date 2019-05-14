@@ -21,6 +21,7 @@ export Feature from './molecules/Feature';
 export ImageCard from './molecules/ImageCard';
 export Info from './molecules/Info';
 export Testimonial from './molecules/Testimonial';
+export Testimonials from './molecules/Testimonials';
 export Faq from './molecules/Faq';
 export HoverCard from './molecules/HoverCard';
 export Timeline from './molecules/Timeline';

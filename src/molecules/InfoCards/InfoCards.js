@@ -1,10 +1,17 @@
 import React from 'react';
 import { css } from 'emotion';
+import { node } from 'prop-types';
 
 const container = css`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
+	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	@media (max-width: 576px) {
+		grid-template-columns: 1fr;
+	}
 
 	.card-container {
 		padding: 5px;
@@ -12,14 +19,18 @@ const container = css`
 		grid-gap: 10px;
 		.card {
 			width: 100%;
+			height: 110px;
+			padding: 5px;
 			display: grid;
 			height: 110px;
 			grid-template-columns: auto 1fr;
 			grid-gap: 5px;
 			align-items: center;
-			border-left: 2px solid transparent;
-			box-shadow: 0 0 2px #e8e8e8;
+			border-left: 3px solid transparent;
+			border-radius: 2px;
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 			transition: all ease 0.2s;
+			text-align: center;
 
 			.subtitle {
 				height: 0;
@@ -38,8 +49,10 @@ const container = css`
 const middleSection = css`
 	height: 235px;
 	overflow: hidden;
-	border: 1px solid grey;
 	text-overflow: ellipsis;
+	@media (max-width: 576px) {
+		display: none;
+	}
 `;
 
 const Context = React.createContext(null);
@@ -72,7 +85,7 @@ class InfoCards extends React.Component {
 					{props.icon &&
 						!props.iconAtRight && <div>{props.icon}</div>}
 					<div>
-						<h1 className="title">{props.title}</h1>
+						<h2 className="title">{props.title}</h2>
 						{props.subtitle && (
 							<p className="subtitle">{props.subtitle}</p>
 						)}
@@ -119,5 +132,9 @@ class InfoCards extends React.Component {
 		);
 	}
 }
+
+InfoCards.propTypes = {
+	children: node,
+};
 
 export default InfoCards;
