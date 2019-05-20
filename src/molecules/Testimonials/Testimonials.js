@@ -55,7 +55,7 @@ const container = primaryColor => css`
 	}
 `;
 
-const testimonial = primaryColor => css`
+const testimonial = () => css`
 	width: 70%;
 	background: white;
 	border: 1px solid #e8e8e8;
