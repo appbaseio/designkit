@@ -5,7 +5,7 @@ import Testimonials from '.';
 
 storiesOf('Testimonials', module).add('default', () => (
 	<Testimonials
-		primaryColor="#b89aea"
+		primaryColor="grey"
 		leftIcon={<ChevronLeft />}
 		rightIcon={<ChevronRight />}
 		testimonials={[

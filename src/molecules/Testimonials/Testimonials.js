@@ -4,7 +4,7 @@ import { array, string, object } from 'prop-types';
 import { ChevronRight, ChevronLeft } from 'react-feather';
 import Quote from './Quotes';
 
-const container = css`
+const container = primaryColor => css`
 	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
@@ -18,6 +18,7 @@ const container = css`
 		outline: 0;
 	}
 	.arrow {
+		background: ${primaryColor};
 		color: #2d1a5a;
 		padding: 10px;
 		border-radius: 50%;
@@ -54,7 +55,7 @@ const container = css`
 	}
 `;
 
-const testimonial = css`
+const testimonial = primaryColor => css`
 	width: 70%;
 	background: white;
 	border: 1px solid #e8e8e8;
@@ -178,11 +179,11 @@ class Testimonials extends React.Component {
 
 	render() {
 		const { selectedIndex } = this.state;
-		const { testimonials } = this.props;
+		const { testimonials, primaryColor } = this.props;
 		const item = testimonials[selectedIndex];
 		return (
 			<div
-				className={container}
+				className={container(primaryColor)}
 				role="button"
 				tabIndex="0"
 				onKeyDown={this.handleKey}
@@ -194,20 +195,17 @@ class Testimonials extends React.Component {
 						role="button"
 						tabIndex="0"
 						onKeyDown={this.handleKey}
-						style={{ background: this.props.primaryColor }}
 					>
 						{this.props.leftIcon}
 					</div>
 				)}
 
-				<div key={item.from} className={testimonial}>
+				<div key={item.from} className={testimonial(primaryColor)}>
 					<div className="quotes start">
-						{' '}
-						<Quote fill={this.props.primaryColor} />
+						<Quote fill={primaryColor} />
 					</div>
 					<div className="quotes end">
-						{' '}
-						<Quote fill={this.props.primaryColor} />
+						<Quote fill={primaryColor} />
 					</div>
 
 					<p>{item.description}</p>
@@ -226,7 +224,6 @@ class Testimonials extends React.Component {
 						role="button"
 						tabIndex="0"
 						onKeyDown={this.handleKey}
-						style={{ background: this.props.primaryColor }}
 					>
 						{this.props.rightIcon}
 					</div>
@@ -237,7 +234,7 @@ class Testimonials extends React.Component {
 }
 
 Testimonials.defaultProps = {
-	primaryColor: '#b89aea',
+	primaryColor: 'red',
 	leftIcon: <ChevronLeft />,
 	rightIcon: <ChevronRight />,
 };

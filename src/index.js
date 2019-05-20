@@ -10,7 +10,6 @@ export Footer from './atoms/Footer';
 export AppFooter from './atoms/AppFooter';
 export Overlay from './atoms/Overlay';
 export LazyImage from './atoms/LazyImage';
-export SliderWrapper from './atoms/SliderWrapper';
 export * from './atoms/typography';
 
 // molecules
