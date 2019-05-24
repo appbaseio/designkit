@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import { Book } from 'react-feather';
+import { number, object, string, func } from 'prop-types';
 import Timeline from '../Timeline';
 
 const container = primaryColor => css`
@@ -113,7 +114,7 @@ class TimelineOption extends React.Component {
 	};
 
 	render() {
-		const { items, primaryColor, itemsToShow } = this.props;
+		const { items, primaryColor, itemsToShow, onClick } = this.props;
 		const { selectedItem } = this.state;
 		return (
 			<div className={container(primaryColor)}>
@@ -145,6 +146,7 @@ class TimelineOption extends React.Component {
 							{window.innerWidth < 768 &&
 								selectedItem === item && (
 									<Timeline
+										onClick={onClick}
 										itemsToShow={itemsToShow}
 										primaryColor={primaryColor}
 										items={items[selectedItem].chapters}
@@ -155,6 +157,7 @@ class TimelineOption extends React.Component {
 				</div>
 				{window.innerWidth > 768 && (
 					<Timeline
+						onClick={onClick}
 						itemsToShow={itemsToShow}
 						primaryColor={primaryColor}
 						items={items[selectedItem].chapters}
@@ -168,6 +171,13 @@ class TimelineOption extends React.Component {
 TimelineOption.defaultProps = {
 	itemsToShow: 3,
 	primaryColor: '#7136d5',
+};
+
+TimelineOption.propTypes = {
+	itemsToShow: number,
+	primaryColor: string,
+	items: object,
+	onClick: func,
 };
 
 export default TimelineOption;

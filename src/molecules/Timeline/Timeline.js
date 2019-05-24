@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import { Circle } from 'react-feather';
+import { string, array, func, number } from 'prop-types';
 import Button from '../../atoms/Button';
 
 const container = (primaryColor, secondaryColor) => css`
@@ -259,8 +260,11 @@ class Timeline extends React.Component {
 				</div>
 				{items.length - 3 > 0 && (
 					<Button
-						style={{ zIndex: 2, background: primaryColor }}
-						primary
+						style={{
+							zIndex: 2,
+							background: primaryColor,
+							color: 'white',
+						}}
 						shadow
 						onClick={this.handleShowItems}
 					>
@@ -278,6 +282,14 @@ Timeline.defaultProps = {
 	itemsToShow: 3,
 	primaryColor: '#7136d5',
 	secondaryColor: '#d9d9d9',
+};
+
+Timeline.propTypes = {
+	itemsToShow: number,
+	secondaryColor: string,
+	primaryColor: string,
+	items: array,
+	onClick: func,
 };
 
 export default Timeline;

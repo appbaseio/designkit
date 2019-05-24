@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import TimelineOption from './TimelineOption';
 import { Play } from 'react-feather';
+import TimelineOption from './TimelineOption';
 
 storiesOf('TimelineOption', module).add('default', () => (
 	<TimelineOption
+		onClick={chapter => console.log(chapter)}
 		items={{
 			'1': {
 				title: 'Topic 1',
@@ -16,6 +17,7 @@ storiesOf('TimelineOption', module).add('default', () => (
 						duration: 12,
 						description:
 							'Adding dependencies jgjh jhghjgjhghj hjgjhghjg',
+						link: 'google.com',
 					},
 					{
 						title: 'Chapter 2',
