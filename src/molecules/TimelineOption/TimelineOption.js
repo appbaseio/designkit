@@ -9,15 +9,25 @@ const container = primaryColor => css`
 	grid-template-columns: 1fr 0.8fr;
 	grid-gap: 10px;
 	padding: 20px 0;
-
 	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
+
+	.visible-small {
+		display: none;
+	}
+
 	@media (max-width: 1024px) {
 		grid-template-columns: 1fr 1fr;
 	}
 	@media (max-width: 768px) {
 		grid-template-columns: auto;
+		.visible-large {
+			display: none;
+		}
+		.visible-small {
+			display: block;
+		}
 	}
 	@keyframes show {
 		from {
@@ -143,8 +153,8 @@ class TimelineOption extends React.Component {
 									</p>
 								</div>
 							</div>
-							{window.innerWidth < 768 &&
-								selectedItem === item && (
+							<div className="visible-small">
+								{selectedItem === item && (
 									<Timeline
 										onClick={onClick}
 										itemsToShow={itemsToShow}
@@ -152,17 +162,18 @@ class TimelineOption extends React.Component {
 										items={items[selectedItem].chapters}
 									/>
 								)}
+							</div>
 						</React.Fragment>
 					))}
 				</div>
-				{window.innerWidth > 768 && (
+				<div className="visible-large">
 					<Timeline
 						onClick={onClick}
 						itemsToShow={itemsToShow}
 						primaryColor={primaryColor}
 						items={items[selectedItem].chapters}
 					/>
-				)}
+				</div>
 			</div>
 		);
 	}
