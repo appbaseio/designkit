@@ -199,7 +199,8 @@ class Timeline extends React.Component {
 		};
 	}
 
-	handleShowItems = () => {
+	handleShowItems = e => {
+		e.preventDefault();
 		this.setState(prevState => ({
 			hideAll: !prevState.hideAll,
 		}));
@@ -209,6 +210,7 @@ class Timeline extends React.Component {
 		if (prevProps.items.length !== this.props.items.length) {
 			const { items, itemsToShow } = this.props;
 			const hideAll = items.length > itemsToShow;
+			// eslint-disable-next-line
 			this.setState({
 				hideAll,
 			});
@@ -258,7 +260,7 @@ class Timeline extends React.Component {
 						);
 					})}
 				</div>
-				{items.length - 3 > 0 && (
+				{items.length - itemsToShow > 0 && (
 					<Button
 						style={{
 							zIndex: 2,
