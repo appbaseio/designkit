@@ -5826,8 +5826,9 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.1.tgz#acb909e327b1e87ec9ef15f41b8a269512ad41ee"
 
 nested-object-assign@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/nested-object-assign/-/nested-object-assign-1.0.2.tgz#9a84ef51b5c11298b5476d6c65b26458c9eae82b"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/nested-object-assign/-/nested-object-assign-1.0.4.tgz#c9db56078eb6043960fdb6ba918a5122a06ccac4"
+  integrity sha512-FlZ7oN9ICt+fbcJ4ag2IsALIcalfE/E16ttdSA8peBiHJI+oEKdOcafqDnUbeUe5NwWGn/m9zZGO9qrAGzfesg==
 
 next-tick@1:
   version "1.0.0"
