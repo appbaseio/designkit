@@ -60,7 +60,7 @@ const container = primaryColor => css`
 				margin: 0;
 				line-height: 0.9;
 				font-weight: 400;
-				color: #262626;
+				color: #54666d;
 			}
 			p {
 				margin: 10px 0;
@@ -131,6 +131,7 @@ class TimelineOption extends React.Component {
 				<div className="topics">
 					{Object.keys(items).map(item => (
 						<React.Fragment key={item}>
+							{/* eslint-disable-next-line */}
 							<div
 								className={`topic ${
 									selectedItem === item ? 'active' : ''

@@ -43,7 +43,7 @@ const container = (primaryColor, secondaryColor) => css`
 			h3 {
 				margin: 0;
 				line-height: 0.9;
-				color: #262626;
+				color: #54666d;
 				font-weight: 400;
 				display: flex;
 				align-items: start;
@@ -234,6 +234,7 @@ class Timeline extends React.Component {
 							return null;
 						}
 						return (
+							// eslint-disable-next-line
 							<div
 								className="item"
 								key={chapter.title}
