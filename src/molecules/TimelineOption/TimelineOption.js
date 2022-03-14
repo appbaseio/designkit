@@ -4,7 +4,7 @@ import { Book } from 'react-feather';
 import { number, object, string, func } from 'prop-types';
 import Timeline from '../Timeline';
 
-const container = primaryColor => css`
+const container = (primaryColor, theme) => css`
 	display: grid;
 	grid-template-columns: 1fr 0.8fr;
 	grid-gap: 10px;
@@ -60,18 +60,18 @@ const container = primaryColor => css`
 				margin: 0;
 				line-height: 0.9;
 				font-weight: 400;
-				color: #262626;
+				color: ${theme === 'dark' ? '#efefef' : '#262626'};
 			}
 			p {
 				margin: 10px 0;
 			}
 			.description {
-				color: #8c8c8c;
+				color: ${theme === 'dark' ? '#dfdfdf' : '#8c8c8c'};
 				margin-top: 12px;
 			}
 			.subtitle {
 				margin-top: 20px;
-				color: #595959;
+				color: ${theme === 'dark' ? '#dfdfdf' : '#595959'};
 				opacity: 0;
 			}
 		}
@@ -124,13 +124,14 @@ class TimelineOption extends React.Component {
 	};
 
 	render() {
-		const { items, primaryColor, itemsToShow, onClick } = this.props;
+		const { items, primaryColor, itemsToShow, onClick, theme } = this.props;
 		const { selectedItem } = this.state;
 		return (
-			<div className={container(primaryColor)}>
+			<div className={container(primaryColor, theme)}>
 				<div className="topics">
 					{Object.keys(items).map(item => (
 						<React.Fragment key={item}>
+							{/* eslint-disable-next-line */}
 							<div
 								className={`topic ${
 									selectedItem === item ? 'active' : ''
@@ -160,6 +161,7 @@ class TimelineOption extends React.Component {
 										itemsToShow={itemsToShow}
 										primaryColor={primaryColor}
 										items={items[selectedItem].chapters}
+										theme={theme}
 									/>
 								)}
 							</div>
@@ -182,6 +184,7 @@ class TimelineOption extends React.Component {
 TimelineOption.defaultProps = {
 	itemsToShow: 3,
 	primaryColor: '#7136d5',
+	theme: 'light',
 };
 
 TimelineOption.propTypes = {
@@ -189,6 +192,7 @@ TimelineOption.propTypes = {
 	primaryColor: string,
 	items: object,
 	onClick: func,
+	theme: string,
 };
 
 export default TimelineOption;

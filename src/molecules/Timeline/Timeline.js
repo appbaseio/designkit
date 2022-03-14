@@ -4,7 +4,7 @@ import { Circle } from 'react-feather';
 import { string, array, func, number } from 'prop-types';
 import Button from '../../atoms/Button';
 
-const container = (primaryColor, secondaryColor) => css`
+const container = (primaryColor, secondaryColor, theme) => css`
 	@keyframes show {
 		from {
 			opacity: 0;
@@ -43,7 +43,7 @@ const container = (primaryColor, secondaryColor) => css`
 			h3 {
 				margin: 0;
 				line-height: 0.9;
-				color: #262626;
+				color: ${theme === 'dark' ? '#efefef' : '#262626'};
 				font-weight: 400;
 				display: flex;
 				align-items: start;
@@ -56,11 +56,11 @@ const container = (primaryColor, secondaryColor) => css`
 			}
 			p {
 				margin: 12px 0;
-				color: #8c8c8c;
+				color: ${theme === 'dark' ? '#dfdfdf' : '#8c8c8c'};
 			}
 			.description {
 				margin-top: 20px;
-				color: #595959;
+				color: ${theme === 'dark' ? '#dfdfdf' : '#595959'};
 			}
 		}
 		&::before {
@@ -224,16 +224,18 @@ class Timeline extends React.Component {
 			secondaryColor,
 			onClick,
 			itemsToShow,
+			theme,
 		} = this.props;
 		const { hideAll } = this.state;
 		return (
-			<div className={container(primaryColor, secondaryColor)}>
+			<div className={container(primaryColor, secondaryColor, theme)}>
 				<div className="timeline">
 					{items.map((chapter, index) => {
 						if (hideAll && index > itemsToShow - 1) {
 							return null;
 						}
 						return (
+							// eslint-disable-next-line
 							<div
 								className="item"
 								key={chapter.title}
@@ -284,6 +286,7 @@ Timeline.defaultProps = {
 	itemsToShow: 3,
 	primaryColor: '#7136d5',
 	secondaryColor: '#d9d9d9',
+	theme: 'light',
 };
 
 Timeline.propTypes = {
@@ -292,6 +295,7 @@ Timeline.propTypes = {
 	primaryColor: string,
 	items: array,
 	onClick: func,
+	theme: string,
 };
 
 export default Timeline;
