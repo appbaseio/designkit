@@ -4,7 +4,7 @@ import { Circle } from 'react-feather';
 import { string, array, func, number } from 'prop-types';
 import Button from '../../atoms/Button';
 
-const container = (primaryColor, secondaryColor, theme) => css`
+const container = (primaryColor, secondaryColor, theme, font) => css`
 	@keyframes show {
 		from {
 			opacity: 0;
@@ -13,7 +13,7 @@ const container = (primaryColor, secondaryColor, theme) => css`
 			opacity: 1;
 		}
 	}
-	font-family: 'Inter', sans-serif;
+	font-family: ${font ? font : `'Inter', sans-serif`};
 	.timeline {
 		@media (max-width: 768px) {
 			margin: 20px 0;
@@ -223,10 +223,12 @@ class Timeline extends React.Component {
 			onClick,
 			itemsToShow,
 			theme,
+			font,
 		} = this.props;
 		const { hideAll } = this.state;
 		return (
-			<div className={container(primaryColor, secondaryColor, theme)}>
+			// eslint-disable-next-line
+			<div className={container(primaryColor, secondaryColor, theme, font)}>
 				<div className="timeline">
 					{items.map((chapter, index) => {
 						if (hideAll && index > itemsToShow - 1) {
@@ -285,6 +287,7 @@ Timeline.defaultProps = {
 	primaryColor: '#7136d5',
 	secondaryColor: '#d9d9d9',
 	theme: 'light',
+	font: '',
 };
 
 Timeline.propTypes = {
@@ -294,6 +297,7 @@ Timeline.propTypes = {
 	items: array,
 	onClick: func,
 	theme: string,
+	font: string,
 };
 
 export default Timeline;
