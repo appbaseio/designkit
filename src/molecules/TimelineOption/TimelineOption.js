@@ -9,9 +9,7 @@ const container = (primaryColor, theme) => css`
 	grid-template-columns: 1fr 0.8fr;
 	grid-gap: 10px;
 	padding: 20px 0;
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
+	font-family: 'Inter', sans-serif;
 
 	.visible-small {
 		display: none;

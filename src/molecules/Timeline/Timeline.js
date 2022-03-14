@@ -13,9 +13,7 @@ const container = (primaryColor, secondaryColor, theme) => css`
 			opacity: 1;
 		}
 	}
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
+	font-family: 'Inter', sans-serif;
 	.timeline {
 		@media (max-width: 768px) {
 			margin: 20px 0;
