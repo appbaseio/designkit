@@ -173,6 +173,7 @@ class TimelineOption extends React.Component {
 						itemsToShow={itemsToShow}
 						primaryColor={primaryColor}
 						items={items[selectedItem].chapters}
+						theme={theme}
 					/>
 				</div>
 			</div>
