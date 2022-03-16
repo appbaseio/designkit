@@ -8,7 +8,7 @@ storiesOf('Footer', module).add('default', () => (
 		<Footer.Brand>
 			<img
 				width="100%"
-				src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/22b76c14-4897-464d-a653-6474b2d47a49/textlogo_white_%28600__300_px%29.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220316%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220316T063543Z&X-Amz-Expires=86400&X-Amz-Signature=b8f10b1e4cd01e56a5d9c501e336270a59a5117f11a7a84222d1a80c257dba6f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22text%252Blogo%2520white%2520%28600%2520%25C3%2597%2520300%2520px%29.svg%22&x-id=GetObject"
+				src="https://cdn.jsdelivr.net/gh/appbaseio/cdn@dev/appbase/logos/reactivesearch-color.svg"
 				alt="reactivesearch.io"
 			/>
 		</Footer.Brand>
