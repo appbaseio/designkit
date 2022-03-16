@@ -7,6 +7,7 @@ const Card = styled('a')`
 	${base};
 	${font};
 
+	font-family: ${props => (props.font ? props.font : `'Inter', sans-serif`)};
 	display: block;
 	height: auto;
 	padding: ${props => (props.big ? '60px 45px 32px' : '32px 45px')};

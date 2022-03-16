@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Footer from '../Footer';
-
 import Title from '../typography/Title';
 
 storiesOf('Footer', module).add('default', () => (
@@ -9,8 +8,8 @@ storiesOf('Footer', module).add('default', () => (
 		<Footer.Brand>
 			<img
 				width="100%"
-				src="https://opensource.appbase.io/reactivesearch/images/logo.svg"
-				alt="appbase.io"
+				src="https://cdn.jsdelivr.net/gh/appbaseio/cdn@dev/appbase/logos/reactivesearch-color.svg"
+				alt="reactivesearch.io"
 			/>
 		</Footer.Brand>
 		<Footer.Links>

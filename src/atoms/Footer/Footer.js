@@ -9,6 +9,7 @@ const Section = styled('div')`
 	${base};
 	${font};
 
+	font-family: ${props => (props.font ? props.font : `'Inter', sans-serif`)};
 	width: 100%;
 	padding: 80px 0;
 	background-color: #062033;

@@ -31,6 +31,34 @@ storiesOf('Timeline', module)
 			]}
 		/>
 	))
+	.add('dark', () => (
+		<Timeline
+			primaryColor="#1804ff"
+			itemsToShow={2}
+			onClick={item => alert(`Clicked ${item.title}`)}
+			items={[
+				{
+					title: 'Item 1',
+					subtitle: 'Item 1 Subtitle',
+				},
+				{
+					title: 'Item 2',
+					subtitle: 'Item 2 Subtitle',
+					description: 'Item 2 Description',
+				},
+				{
+					title: 'Item 3',
+					subtitle: 'Item 3 Subtitle',
+					description: 'Item 3 Description',
+				},
+				{
+					title: 'Item 4',
+					subtitle: 'Item 4 Subtitle',
+				},
+			]}
+			theme="dark"
+		/>
+	))
 	.add('with Custom Components', () => (
 		<Timeline
 			primaryColor="#d9534f"

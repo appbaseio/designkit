@@ -4,14 +4,12 @@ import { Book } from 'react-feather';
 import { number, object, string, func } from 'prop-types';
 import Timeline from '../Timeline';
 
-const container = (primaryColor, theme) => css`
+const container = (primaryColor, theme, font) => css`
 	display: grid;
 	grid-template-columns: 1fr 0.8fr;
 	grid-gap: 10px;
 	padding: 20px 0;
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
+	font-family: ${font ? font : `'Inter', sans-serif`};
 
 	.visible-small {
 		display: none;
@@ -124,10 +122,11 @@ class TimelineOption extends React.Component {
 	};
 
 	render() {
-		const { items, primaryColor, itemsToShow, onClick, theme } = this.props;
+		// eslint-disable-next-line
+		const { items, primaryColor, itemsToShow, onClick, theme, font } = this.props;
 		const { selectedItem } = this.state;
 		return (
-			<div className={container(primaryColor, theme)}>
+			<div className={container(primaryColor, theme, font)}>
 				<div className="topics">
 					{Object.keys(items).map(item => (
 						<React.Fragment key={item}>
@@ -174,6 +173,7 @@ class TimelineOption extends React.Component {
 						itemsToShow={itemsToShow}
 						primaryColor={primaryColor}
 						items={items[selectedItem].chapters}
+						theme={theme}
 					/>
 				</div>
 			</div>
@@ -185,6 +185,7 @@ TimelineOption.defaultProps = {
 	itemsToShow: 3,
 	primaryColor: '#7136d5',
 	theme: 'light',
+	font: '',
 };
 
 TimelineOption.propTypes = {
@@ -193,6 +194,7 @@ TimelineOption.propTypes = {
 	items: object,
 	onClick: func,
 	theme: string,
+	font: string,
 };
 
 export default TimelineOption;

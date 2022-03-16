@@ -1,8 +1,6 @@
 const theme = {
 	// typography
-	fontFamily:
-		'"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Droid Sans", "Helvetica Neue", sans-serif',
-
+	fontFamily: `'Inter', sans-serif`,
 	// colors
 	textLight: '#fefefe',
 	textDark: '#424242',
