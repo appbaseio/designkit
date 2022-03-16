@@ -3,6 +3,9 @@
 	"version": "0.11.0",
 	"description": "Design kit for appbaseio ecosystem",
 	"main": "lib/index.js",
+	"engines": {
+		"node" : ">=16.4.0"
+	},
 	"files": [
 		"lib/"
 	],
