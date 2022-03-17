@@ -257,6 +257,7 @@ class Navbar extends Component {
 			className,
 			fixOffset,
 			toggleMenu,
+			dark,
 			...props
 		} = this.props;
 		const isOpen = this.state.showMenu ? 'is-open' : '';
@@ -280,6 +281,7 @@ class Navbar extends Component {
 						justifyContent: 'space-between',
 						alignItems: 'center',
 						margin: '0 auto',
+						background: `${dark ? '#333' : '#fff'}`,
 					}}
 				>
 					{children}
