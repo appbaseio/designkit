@@ -78,13 +78,13 @@ storiesOf('Navbar', module)
 			</Navbar.Logo>
 			<Navbar.List>
 				<li className="active">
-					<a href="/">Item 1</a>
+					<a href="/" style={{ color: '#efefef' }}>Item 1</a>
 				</li>
 				<li>
-					<a href="/">Item 2</a>
+					<a href="/" style={{ color: '#efefef' }}>Item 2</a>
 				</li>
 				<li>
-					<a href="/">Item 3</a>
+					<a href="/" style={{ color: '#efefef' }}>Item 3</a>
 				</li>
 				<li className="button">
 					<Button dark>Get started</Button>
