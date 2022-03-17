@@ -34,7 +34,11 @@ const imgPath = 'https://opensource.appbase.io/reactivesearch/images';
 
 const FooterBrand = ({ brandLinksConfig }) => (
 	<React.Fragment>
-		<img width="100%" src={`${imgPath}/logo.svg`} alt="appbase.io" />
+		<img
+			width="100%"
+			src="https://cdn.jsdelivr.net/gh/appbaseio/cdn@dev/appbase/logos/reactivesearch-color.svg"
+			alt="appbase.io"
+		/>
 		<div
 			className={css({
 				textAlign: 'left',
