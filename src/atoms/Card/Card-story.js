@@ -32,7 +32,7 @@ storiesOf('Card', module)
 			<Title>Documentation</Title>
 			<p>
 				Dive in to learn all about{' '}
-				<span style={{ color: '#0033FF' }}>Reactive X</span> development for 
+				<span style={{ color: 'rgb(136 154 225)' }}>Reactive X</span> development for 
 				all platforms.
 			</p>
 		</Card>

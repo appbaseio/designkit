@@ -41,7 +41,7 @@ const Card = styled('a')`
 	&:focus {
 		h4 {
 			color: ${props =>
-				props.href ? props.theme.primaryColor || 'blue' : '#424242'};
+				props.href ? props.theme.primaryColor || props.theme === 'dark' ? 'rgb(136 154 225)' : 'blue' : '#424242'};
 		}
 	}
 `;
