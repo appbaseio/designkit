@@ -1,3 +1,4 @@
+import { string } from 'prop-types';
 import styled from 'react-emotion';
 
 import base from '../../shared/base';
@@ -13,14 +14,14 @@ const Card = styled('a')`
 	padding: ${props => (props.big ? '60px 45px 32px' : '32px 45px')};
 	border-radius: 2px;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-	background-color: #fff;
+	background-color: ${props => (props.theme === 'dark' ? '#2a3644' : '#fff')};
 	text-align: center;
-	color: #424242;
+	color: ${props => (props.theme === 'dark' ? '#dfdfdf' : '#424242')};
 	text-decoration: none;
 	cursor: ${props => (props.href ? 'pointer' : 'default')};
 
 	h4 {
-		color: #424242;
+		color: ${props => (props.theme === 'dark' ? '#dfdfdf' : '#424242')};
 		transition: all 0.3s ease;
 	}
 
@@ -40,9 +41,17 @@ const Card = styled('a')`
 	&:focus {
 		h4 {
 			color: ${props =>
-				props.href ? props.theme.primaryColor || 'blue' : '#424242'};
+				props.href ? props.theme.primaryColor || props.theme === 'dark' ? 'rgb(136 154 225)' : 'blue' : '#424242'};
 		}
 	}
 `;
+
+Card.defaultProps = {
+	theme: 'light',
+};
+
+Card.propTypes = {
+	theme: string,
+};
 
 export default Card;
